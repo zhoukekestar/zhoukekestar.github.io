@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>architecture</title>
+    <link rel="stylesheet" href="./libs/mermaid/7.0.0/mermaid.css">
+    <script src='./libs/mermaid/7.0.0/mermaid.min.js'></script>
+    <style>
+      body {
+        opacity: 0;
+        transition: all .5s;
+        width: 980px;
+        margin: 20px auto;
+        font-family: monospace;
+        overflow-x: hidden;
+      }
+      .show {
+        opacity: 1;
+      }
+      .text-center {
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <h3>Project:</h3>
+    <div class="mermaid">
+      graph LR
+        APP --- ESLint
+        APP --- Dockerfile
+        APP --- Build(Build & Dev)
+        APP --- Express
+        APP --- Koa
+
+        Build --- Gulp
+        Build --- NPM(npm scripts)
+
+        ESLint --- Airbnb(Aribnb Javascript Style)
+        click Airbnb "https://github.com/airbnb/javascript" "Javascript Style Guide"
+
+        Express --- Views
+        Express --- Routes(routes)
+        Koa --- Views
+        Koa --- Routes
+
+        Views --- Jade
+        Views --- Pug
+        Views --- WebComponents
+
+        Routes --- ES5
+        Routes --- ES6
+        Routes --- ES7
+
+        ES5 --- ES5D(Promise)
+        ES6 --- ES6D(Generators yield)
+        ES7 --- ES7D(async await)
+
+    </div>
+    <h3>Develop:</h3>
+    <div class="mermaid">
+      graph LR
+        Doc(Document & Requirement) -- SVN --> Local(Local PC)
+        Redmine("Redmine (Bug)") -- web --> Local
+        Local --> LCode(Local Code)
+        LCode -- Git Push --> RCode(Remote Code)
+    </div>
+    <div class="mermaid">
+      graph LR
+
+        RCode(Remote Code) -- Git Pull --> BranchD(Branch Dev)
+        BranchD -- Docker Build --> ImageL(Image:latest)
+        ImageL -- Auto Deploy --> DockerT(Docker Test Env)
+
+        RCode -- Git Pull --> BranchM(Branch Master)
+        BranchM --Docker Build --> ImageR(Image:release)
+        ImageR -- Manually Deploy --> DockerR(Docker Release Env)
+    </div>
+    <h3>Server:</h3>
+    <div class="mermaid">
+      graph BT
+        index(index.html) -- https --> SLB(Aliyun SLB)
+        index --> API(Backend API)
+        index -- log --> Log(Log System)
+        index --> CDN(CDN: image etc)
+        index --> Common(Common: combine)
+        Common --> JS
+        Common --> CSS
+        Common --> WebComponents
+
+        SLB -- http --> Nginx1
+        SLB -- http --> Nginx2
+        Nginx1 --> Docker1
+        Nginx1 --> Docker2
+        Nginx1 .-> Docker3(...)
+        Nginx2 --> Docker1
+        Nginx2 --> Docker2
+        Nginx2 .-> Docker3
+
+    </div>
+    <div class="mermaid">
+      graph BT
+        Docker --> API(Backend API)
+        Docker -- log --> Log(Log System)
+        Docker -- Path: /user --> MicroUser("Docker Module: User<br />(Micro Services)")
+        Docker -- Path: /pay --> MicroPay("Docker Module: Pay <br />(Micro Services)")
+        Docker -- env --> Env("NODE_ENV: production<br /> NODE_PORT: 3000")
+
+        Log --> MongoDB((MongoDB))
+        API --> MySQL((MySQL))
+
+        MicroUser --> Redis((Redis<br /> cache, session<br /> etc))
+        MicroPay --> Redis
+
+        class Redis text-center
+        class MicroUser text-center
+        class MicroPay text-center
+    </div>
+
+    <h3>Future:</h3>
+    <div class="mermaid">
+      graph TB
+        Backend --- GraphQL(GraphQL <br /> serverless framework by Fackbook)
+        Backend --- RethinkDB(RethinkDB <br /> realtime db from Linux Foundation)
+        Backend --- Micro(Micro Services)
+
+        class GraphQL text-center
+        class RethinkDB text-center
+    </div>
+    <div class="mermaid">
+      graph TB
+        FrontEnd --- WebComponents
+        FrontEnd --- WebAssembly
+        FrontEnd --- WebSockets
+        FrontEnd --- WebRTC
+        FrontEnd --- Canvas(Canvas WebGL)
+    </div>
+    <div class="mermaid">
+      graph TB
+        Others --- TensorFlow
+        Others --- MachineLearning
+    </div>
+
+    <p>This website is powered by: <a href='https://github.com/knsv/mermaid'>mermaid</a> & <a href="https://github.com">github</a>. Thanks a lot.</p>
+    <!-- Doc: http://knsv.github.io/mermaid/#graph18 -->
+
+    <script>
+      mermaid.initialize({startOnLoad:true});
+      setTimeout(function() {
+        var s = document.createElement('style')
+        s.innerHTML = ".edgeLabel { border-radius: 5px; padding: 5px;font-size: 12px; background-color: #f4f4f4 !important;}";
+        document.head.appendChild(s);
+        document.body.classList.add('show');
+      }, 500)
+    </script>
+  </body>
+</html>
