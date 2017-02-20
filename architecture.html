@@ -99,7 +99,7 @@
     </div>
     <div class="mermaid">
       graph BT
-        Docker --> API(Backend API)
+        Docker -- RESTful --> API(Backend API)
         Docker -- log --> Log(Log System)
         Docker -- Path: /user --> MicroUser("Docker Module: User<br />(Micro Services)")
         Docker -- Path: /pay --> MicroPay("Docker Module: Pay <br />(Micro Services)")
