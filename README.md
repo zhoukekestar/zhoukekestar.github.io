@@ -12,9 +12,10 @@
     * This page should be a single page packed by webpack or rollup and so on...
     
 
-* notes 
+# notes 
   * Fill the hole !
     * AJAX (anything left? See jquery api list!
     * rollup ? webpack ?
     * Server powered by leancould should proxy my ajax request!
+    * MVC, MVVM?
     
