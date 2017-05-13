@@ -18,4 +18,5 @@
     * rollup ? webpack ?
     * Server powered by leancould should proxy my ajax request!
     * MVC, MVVM?
+    * Security & optimize ...https, http2, cache?
     
