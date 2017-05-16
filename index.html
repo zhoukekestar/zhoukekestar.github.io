@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>zhoukekestar</title>
+    <style>
+      html, body {
+        position: fixed;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 100%;
+        background-size: cover;
+        background-image: url(https://marcbruederlin.github.io/particles.js/img/background.jpg);
+        background-position: center;
+        font-family: Arial, sans-serif;
+      }
+      body {
+        padding: 0;
+        margin: 0;
+      }
+      header {
+        display: flex;
+        justify-content: center;
+        padding: 100px 0;
+      }
+      header a {
+        margin: 40px;
+        font-size: 22px;
+        text-decoration: none;
+        color: rgba(255, 255, 255, 0.5);
+        transition: all .5s;
+      }
+      header a:hover {
+        color: #fff;
+      }
+      section p {
+        text-align: center;
+      }
+      section p span {
+        color: #fff;
+        text-align: center;
+        font-size: 38px;
+        line-height: 2.3em;
+        font-weight: bold;
+        letter-spacing: 4px;
+      }
+      canvas {
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: -1;
+      }
+      span.typed-cursor {
+        color: #fff;
+      }
+      .typed-cursor{
+        opacity: 1;
+        color: #fff;
+        -webkit-animation: blink 0.7s infinite;
+        -moz-animation: blink 0.7s infinite;
+        animation: blink 0.7s infinite;
+      }
+      @keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+      }
+      @-webkit-keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+      }
+      @-moz-keyframes blink{
+        0% { opacity:1; }
+        50% { opacity:0; }
+        100% { opacity:1; }
+      }
+    </style>
+  </head>
+  <body>
+    <header>
+      <a href="/notes" target="_blank">Notes</a>
+      <!-- <a href="/resume.html" target="_blank">Resume</a> -->
+      <a href="https://github.com/zhoukekestar" target="_blank">Profile</a>
+      <!-- <a href="/architecture.html" target="_blank">Points</a> -->
+    </header>
+    <section>
+      <p><span><span></p>
+    </section>
+
+    <!-- typing words -->
+    <script src="https://cdn.bootcss.com/typed.js/1.1.7/typed.min.js"></script>
+    </script>
+    <script>
+      Typed.new('p span', {
+        strings: ["Thinksgiving.<br>Love what you learn, Do what you want.<br>Be the Best."],
+        typeSpeed: 60,
+        showCursor: true,
+        cursorChar: "|",
+      });
+    </script>
+
+    <!-- particles -->
+    <canvas id="background"></div>
+    <script src="https://cdn.bootcss.com/particlesjs/2.0.2/particles.min.js"></script>
+    <script>
+      Particles.init({
+        selector: '#background',
+        color: '#75A5B7',
+        maxParticles: 50,
+        connectParticles: true,
+      });
+    </script>
+
+    <!-- GA -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-96916405-4', 'auto');
+      ga('send', 'pageview');
+    </script>
+  </body>
+</html>
