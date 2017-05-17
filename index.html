@@ -11,7 +11,7 @@
         height: 100%;
         width: 100%;
         background-size: cover;
-        background-image: url(https://marcbruederlin.github.io/particles.js/img/background.jpg);
+        background-image: url(./public/img/background.jpg);
         background-position: center;
         font-family: Arial, sans-serif;
       }
@@ -19,6 +19,7 @@
         padding: 0;
         margin: 0;
       }
+      /* 菜单 */
       header {
         display: flex;
         justify-content: center;
@@ -34,10 +35,53 @@
       header a:hover {
         color: #fff;
       }
-      section p {
+      /* 头像和昵称 */
+      section {
         text-align: center;
       }
-      section p span {
+      section:hover {
+        cursor: pointer;
+      }
+      section small {
+        color: #fff;
+        font-size: 20px;
+      }
+      section:hover small {
+        -webkit-animation: breath 2s infinite;
+        -moz-animation: breath 2s infinite;
+        animation: breath 2s infinite;
+      }
+      section img {
+        height: 100px;
+        width: 100px;
+        display: block;
+        margin: 20px auto;
+      }
+      section, section img, section small {
+        transition: all .5s;
+      }
+      section.actived {
+        margin-top: -40px;
+      }
+      section.actived img {
+        height: 50px;
+        width: 50px;
+      }
+      section.actived small {
+        font-size: 14px;
+      }
+      /* 我的谚语 */
+      p {
+        transition: all .5s;
+        text-align: center;
+      }
+      section + p {
+        opacity: 0;
+      }
+      section.actived + p {
+        opacity: 1;
+      }
+      p span {
         color: #fff;
         text-align: center;
         font-size: 38px;
@@ -45,12 +89,14 @@
         font-weight: bold;
         letter-spacing: 4px;
       }
+      /* 粒子背景 */
       canvas {
         position: fixed;
         left: 0;
         top: 0;
         z-index: -1;
       }
+      /* 打字光标 */
       span.typed-cursor {
         color: #fff;
       }
@@ -61,6 +107,7 @@
         -moz-animation: blink 0.7s infinite;
         animation: blink 0.7s infinite;
       }
+      /* 打字光标动画 */
       @keyframes blink{
         0% { opacity:1; }
         50% { opacity:0; }
@@ -76,6 +123,54 @@
         50% { opacity:0; }
         100% { opacity:1; }
       }
+      /* 昵称呼吸灯动画 */
+      @keyframes breath{
+        0% {
+          text-shadow: 0 0 0 #fff;
+        }
+        50% {
+          text-shadow: 0 0 15px #fff;
+        }
+        100% {
+          text-shadow: 0 0 0 #fff;
+        }
+      }
+      @-webkit-keyframes breath{
+        0% {
+          text-shadow: 0 0 0 #fff;
+        }
+        50% {
+          text-shadow: 0 0 15px #fff;
+        }
+        100% {
+          text-shadow: 0 0 0 #fff;
+        }
+      }
+      @-moz-keyframes breath{
+        0% {
+          text-shadow: 0 0 0 #fff;
+        }
+        50% {
+          text-shadow: 0 0 15px #fff;
+        }
+        100% {
+          text-shadow: 0 0 0 #fff;
+        }
+      }
+      /* 底部感谢 */
+      footer {
+        color: #3e3e3e;
+        position: fixed;
+        bottom: 0;
+        text-align: center;
+        display: block;
+        width: 100%;
+        padding: 30px 0;
+        font-size: 14px;
+      }
+      footer a {
+        color: inherit;
+      }
     </style>
   </head>
   <body>
@@ -86,19 +181,33 @@
       <!-- <a href="/architecture.html" target="_blank">Points</a> -->
     </header>
     <section>
-      <p><span><span></p>
+      <img src='https://avatars2.githubusercontent.com/u/7157346?v=3&s=460'>
+      <small>zhoukekestar</small>
     </section>
+    <p><span><span></p>
 
+    <footer>
+      This site is powered by
+      <a href='https://github.com/' target="_blank">github</a>,
+      <a href='https://www.mattboldt.com/demos/typed-js/' target="_blank">typed.js</a>,
+      <a href='https://github.com/marcbruederlin/particles.js'  target="_blank">particles.js</a>.
+      Thanks a lot.
+    </footer>
     <!-- typing words -->
     <script src="https://cdn.bootcss.com/typed.js/1.1.7/typed.min.js"></script>
-    </script>
     <script>
-      Typed.new('p span', {
-        strings: ["Thinksgiving.<br>Love what you learn, Do what you want.<br>Be the Best."],
-        typeSpeed: 60,
-        showCursor: true,
-        cursorChar: "|",
-      });
+      var section = document.querySelector('section')
+      section.onclick = function () {
+        this.classList.toggle('actived');
+        if (this.classList.contains('actived')) {
+          Typed.new('p span', {
+            strings: ["Thinksgiving.<br>Love what you learn, Do what you want.<br>Be the Best."],
+            typeSpeed: 60,
+            showCursor: true,
+            cursorChar: "|",
+          });
+        }
+      }
     </script>
 
     <!-- particles -->
