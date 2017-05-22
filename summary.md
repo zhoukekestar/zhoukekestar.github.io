@@ -8,30 +8,41 @@
     * ACM训练，个人的[题目列表](http://acm.tzc.edu.cn/acmhome/userDetail.do?userName=zhoukeke)
     * ACM竞赛，[浙江省赛银奖](http://acm.tzc.edu.cn/acmhome/heroList.do?method=showTeamList&year=2013)
   * `2013-06 ~ 2013-09` [Farm](https://github.com/zhoukekestar/college-legacy). 
+  
     Tags: `ASP`, `C#`, `SQL-Server`
-    
-    老师外接的一个项目，由2个计算机应用的同学，
+    
+    项目描述：老师外接的一个项目，通过收集农场温湿度，实时监控并可人为控制各种农场设备，以达到远程管理农场的目的。由2个计算机应用的同学，
     2个物理与电子信息科学的同学（负责设计电路，使用ZigBee搭建内网，收集温湿度等数据，通过2G/3G网络上传至服务器）共同完成。
-    其中我负责Web和后台通讯，展示底层收集上来的数据，并能下发指令控制设备（如：打开风机使温度降低）
+    
+    职责：项目软件Web客户端和后台通讯负责人
+
+    结果：采用C#做为后台服务器，SQL-Server为数据持久层，使用ASP实时展现温湿度数据，并下发控制指令（如：打开风机使温度降低）。基本实现农场各项数据的实时监控，并能够下达指令，控制各种设备达到远程管理的效果。通过项目的参与，完整地了解整个的项目的流程，学校的理论知识也得到了实践。
+    
   * `2013-09 ~ 2014-02` [mobile-life](https://github.com/zhoukekestar/MobileLife). 
+  
     Tags: `C`, `Linux`, `JAVA`
     
-    是一个竞赛的课题，由我主导小组实现各个功能，并发表一篇论文。其中涉及到底层嵌入式系统收集信息，上传信息，处理信息，下发指令，执行指令等流程。
-    与farm项目不同的是，该项目使用嵌入式系统，对计算机应用的同学更友好，不用开发电路板。所以，由计算机应用的同学完成，没有物电同学的参与。对Linux和C有了更深入的了解，其中也了解到了pipe、thread等概念。
-    也有一篇公开发表的论文:[远程控制家具的软件设计](http://d.wanfangdata.com.cn/Periodical/hljkjxx201511146)
+    项目描述：竞赛的课题，通过下发红外指令，控制一些可由遥控器控制的家电（车库，空调，电视等）。实践理论假设，并发表一篇论文。
+    
+    职责：带领小组成员通过开发嵌入式系统的软件和JSP控制页面，实现预定目标。
+    
+    结果：一篇公开发表的论文:[远程控制家具的软件设计](http://d.wanfangdata.com.cn/Periodical/hljkjxx201511146)。项目进行过程中，需要查阅大量linux和嵌入式的资料，自学能力得到较大提升。对Linux和C有了更深入的了解，其中也了解到了pipe、thread等概念。
 
   * 大学的课程项目
     * [A simple Chat](https://github.com/zhoukekestar/college-legacy). 
+    
       Tags: `Java`, `Socket`, `Java Swing`
       
-      能够点对点通讯的桌面应用。Java课程的期末作品，当初学习的时候，对GUI和网络比较感兴趣，所以，选择这个项目。写完swing布局，最大的体会是，相比swing而言，HTML和CSS真是太强大了。
+      能够点对点通讯的桌面应用。Java课程的期末作品（由于对GUI和网络比较感兴趣）。其中深刻体会到swing布局和web布局的差异（HTML和CSS真是强大）。
 
     * [gobang](https://github.com/zhoukekestar/college-legacy). 
+    
       Tags: `C#`, `Socket`
       
-      网络对战五子棋。C#课程的期末作品，对网络通信和GUI比较感兴趣。
+      网络对战五子棋。C#课程的期末作品（出于对网络通信和GUI的兴趣）。
 
     * [magic-cube](https://github.com/zhoukekestar/college-legacy). 
+    
       Tags: `C++`, `OpenGL`
       
       电子魔方，OpenGL课程的期末作品。
