@@ -7,23 +7,33 @@
   * `2011-09 ~ 2013-05` ACM
     * ACM训练，个人的[题目列表](http://acm.tzc.edu.cn/acmhome/userDetail.do?userName=zhoukeke)
     * ACM竞赛，[浙江省赛银奖](http://acm.tzc.edu.cn/acmhome/heroList.do?method=showTeamList&year=2013)
-  * `2013-06 ~ 2013-09` [Farm](https://github.com/zhoukekestar/college-legacy). Tags: `ASP`, `C#`, `SQL-Server`
+  * `2013-06 ~ 2013-09` [Farm](https://github.com/zhoukekestar/college-legacy). 
+    Tags: `ASP`, `C#`, `SQL-Server`
+    
     老师外接的一个项目，由2个计算机应用的同学，
     2个物理与电子信息科学的同学（负责设计电路，使用ZigBee搭建内网，收集温湿度等数据，通过2G/3G网络上传至服务器）共同完成。
     其中我负责Web和后台通讯，展示底层收集上来的数据，并能下发指令控制设备（如：打开风机使温度降低）
-  * `2013-09 ~ 2014-02` [mobile-life](https://github.com/zhoukekestar/MobileLife). Tags: `C`, `Linux`, `JAVA`
+  * `2013-09 ~ 2014-02` [mobile-life](https://github.com/zhoukekestar/MobileLife). 
+    Tags: `C`, `Linux`, `JAVA`
+    
     是一个竞赛的课题，由我主导小组实现各个功能，并发表一篇论文。其中涉及到底层嵌入式系统收集信息，上传信息，处理信息，下发指令，执行指令等流程。
     与farm项目不同的是，该项目使用嵌入式系统，对计算机应用的同学更友好，不用开发电路板。所以，由计算机应用的同学完成，没有物电同学的参与。对Linux和C有了更深入的了解，其中也了解到了pipe、thread等概念。
     也有一篇公开发表的论文:[远程控制家具的软件设计](http://d.wanfangdata.com.cn/Periodical/hljkjxx201511146)
 
   * 大学的课程项目
-    * [A simple Chat](https://github.com/zhoukekestar/college-legacy). Tags: `Java`, `Socket`, `Java Swing`
+    * [A simple Chat](https://github.com/zhoukekestar/college-legacy). 
+      Tags: `Java`, `Socket`, `Java Swing`
+      
       能够点对点通讯的桌面应用。Java课程的期末作品，当初学习的时候，对GUI和网络比较感兴趣，所以，选择这个项目。写完swing布局，最大的体会是，相比swing而言，HTML和CSS真是太强大了。
 
-    * [gobang](https://github.com/zhoukekestar/college-legacy). Tags: `C#`, `Socket`
+    * [gobang](https://github.com/zhoukekestar/college-legacy). 
+      Tags: `C#`, `Socket`
+      
       网络对战五子棋。C#课程的期末作品，对网络通信和GUI比较感兴趣。
 
-    * [magic-cube](https://github.com/zhoukekestar/college-legacy). Tags: `C++`, `OpenGL`
+    * [magic-cube](https://github.com/zhoukekestar/college-legacy). 
+      Tags: `C++`, `OpenGL`
+      
       电子魔方，OpenGL课程的期末作品。
 
   * `2014-02 ~ 2015-06` 大三下半学期和大四一整年（由于老师要求期末科目能过就行），在蓝麦电商公司得到了一份`full-time job`.
