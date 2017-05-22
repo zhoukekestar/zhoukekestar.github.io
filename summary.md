@@ -51,20 +51,25 @@
     由于学校的教学内容和公司的技术要求不匹配，自学当时主流Java框架，由于注重轻量化，所以会以mybatis和servlet为主。学习过程中，记录并开源了[SSH-start](https://github.com/zhoukekestar/SSH-Start)项目, 主要以做笔记为主，也是最早的开源尝试。也写过入门教程[Hibernate 4 简单入门样例](https://wenku.baidu.com/view/bfc233a9700abb68a882fb13.html), 类似的入门教程在[百度文库](https://wenku.baidu.com/u/STERERLEL)上也比较多。
 
 ## 2014-03 ~ 2015-06
+岗位：Java开发工程师
+工作内容：
+* 公司基础技术服务的搭建，如：服务器的Linux安装，SVN，FTP搭建，Web Server（apache，nginx，tomcat）的搭建。
 * 负责公司的后台的接口设计、实现和部署（包括公司和阿里云服务器）。提出采用RESTful风格的接口规范，以及整体迁移阿里云的建议，并得到采纳。
-* 负责实现后台安全模块、后台支付模块。对接第三方支付，满足了当时公司的支付需求，使得公司快速实现现金流的运转。
-* 采用JSP，负责土冒后台管理、土冒移动端页面、微信活动。满足了公司初期的后台管理。及时快速地发布土冒移动版、微信优惠活动，使得公司影响力与日俱增。
+* 负责实现后台安全模块、后台支付模块。对接第三方支付，如支付宝支付，银联支付，满足了当时公司的支付需求，使得公司快速实现现金流的运转。
+* 使用servlet写服务，JSP写web页面。负责土冒后台管理、土冒移动端页面、微信活动。满足了公司初期的后台管理。及时快速地发布土冒移动版、微信优惠活动，使得公司影响力与日俱增。
 
 期间开源的项目：[SSH-start](https://github.com/zhoukekestar/SSH-Start), [zkk-components](https://github.com/zhoukekestar/zkk-components), [modules-for-java](https://github.com/zhoukekestar/modules-for-java) Tags: `Java`, `JSP`, `Spring`, `Servlet`, `Mybatis`, `MySQL`.
 
 ## 2015-07 ~ 2015-12
+岗位：前端工程师
 * 提出前后端分离的解决方案，使得项目得到较大的优化。使得项目问题定位更准确，前端优化更为灵活。
-* 采用nodejs编写front-end，并用模块化方式组织前端页面。使得项目和页面结构更为清晰。
-* 组件化：组件化方案参考过[tmall和polymer](https://github.com/tmallfe/tmallfe.github.io/issues/34)，然后自己造了一个轮子`modules/webcom`。这使得前端页面的代码重用率有较大提升，项目推进速度加快。
+* 采用nodejs编写前端，并用模块化方式（require.js）组织前端页面。使得项目和页面结构更为清晰。
+* 实施组件化（特指封装一段HTML，JS，CSS）方案，参考[tmall和polymer](https://github.com/tmallfe/tmallfe.github.io/issues/34)，造了一个简单组件化轮子`modules/webcom`。这使得前端页面的代码重用率有较大提升，项目推进速度加快。
 
 期间开源了[modules](https://github.com/zhoukekestar/modules)
 
 ## 2016-01 ~ 2016-12
+岗位：前端工程师
 * 提出采用git + Docker化部署方案，并在前端领域得到了技术总监的许可，先于后端在阿里云上进行docker部署。
   采用`git push + auto build + deploy image`的工作流，在测试环境实现了代码变更的自动部署，极大提高了部署效率。
 * 提出使用Weex编写android和ios客户端
