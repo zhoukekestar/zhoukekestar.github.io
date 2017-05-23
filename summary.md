@@ -7,44 +7,44 @@
   * `2011-09 ~ 2013-05` ACM
     * ACM训练，个人的[题目列表](http://acm.tzc.edu.cn/acmhome/userDetail.do?userName=zhoukeke)
     * ACM竞赛，[浙江省赛银奖](http://acm.tzc.edu.cn/acmhome/heroList.do?method=showTeamList&year=2013)
-  * `2013-06 ~ 2013-09` [Farm](https://github.com/zhoukekestar/college-legacy). 
-  
+  * `2013-06 ~ 2013-09` [Farm](https://github.com/zhoukekestar/college-legacy).
+
     Tags: `ASP`, `C#`, `SQL-Server`
     
     项目描述：老师外接的一个项目，通过收集农场温湿度，实时监控并可人为控制各种农场设备，以达到远程管理农场的目的。由2个计算机应用的同学，
     2个物理与电子信息科学的同学（负责设计电路，使用ZigBee搭建内网，收集温湿度等数据，通过2G/3G网络上传至服务器）共同完成。
-    
+
     职责：项目软件Web客户端和后台通讯负责人
 
     结果：采用C#做为后台服务器，SQL-Server为数据持久层，使用ASP实时展现温湿度数据，并下发控制指令（如：打开风机使温度降低）。基本实现农场各项数据的实时监控，并能够下达指令，控制各种设备达到远程管理的效果。通过项目的参与，完整地了解整个的项目的流程，学校的理论知识也得到了实践。
     
-  * `2013-09 ~ 2014-02` [mobile-life](https://github.com/zhoukekestar/MobileLife). 
-  
+  * `2013-09 ~ 2014-02` [mobile-life](https://github.com/zhoukekestar/MobileLife).
+
     Tags: `C`, `Linux`, `JAVA`
-    
+
     项目描述：竞赛的课题，通过下发红外指令，控制一些可由遥控器控制的家电（车库，空调，电视等）。实践理论假设，并发表一篇论文。
-    
+
     职责：带领小组成员通过开发嵌入式系统的软件和JSP控制页面，实现预定目标。
     
     结果：一篇公开发表的论文:[远程控制家具的软件设计](http://d.wanfangdata.com.cn/Periodical/hljkjxx201511146)。项目进行过程中，需要查阅大量linux和嵌入式的资料，自学能力得到较大提升。对Linux和C有了更深入的了解，其中也了解到了pipe、thread等概念。
 
   * 大学的课程项目
-    * [A simple Chat](https://github.com/zhoukekestar/college-legacy). 
-    
+    * [A simple Chat](https://github.com/zhoukekestar/college-legacy).
+
       Tags: `Java`, `Socket`, `Java Swing`
-      
+
       能够点对点通讯的桌面应用。Java课程的期末作品（由于对GUI和网络比较感兴趣）。其中深刻体会到swing布局和web布局的差异（HTML和CSS真是强大）。
 
-    * [gobang](https://github.com/zhoukekestar/college-legacy). 
-    
+    * [gobang](https://github.com/zhoukekestar/college-legacy).
+
       Tags: `C#`, `Socket`
-      
+
       网络对战五子棋。C#课程的期末作品（出于对网络通信和GUI的兴趣）。
 
-    * [magic-cube](https://github.com/zhoukekestar/college-legacy). 
-    
+    * [magic-cube](https://github.com/zhoukekestar/college-legacy).
+
       Tags: `C++`, `OpenGL`
-      
+
       电子魔方，OpenGL课程的期末作品。
 
   * `2014-02 ~ 2015-06` 大三下半学期和大四一整年（由于老师要求期末科目能过就行），在蓝麦电商公司得到了一份`full-time job`.
@@ -86,6 +86,8 @@
 
 
 ## 2017-01 ~ now
+岗位：前端工程师
+* 提出后台接口使用GraphQL标准，并率先在运营后台的用户权限与认证模块得到有效的落地实施，取得不错的效果。
 * 最大化接近标准的页面架构方式，目前倾向riot
 
 最大化接近标准，主要是近年来，web发展迅猛，光编译工具就有grunt，gulp，webpack，browserify等等，前端框架也是层出不穷，
@@ -95,6 +97,7 @@
 
 ## 技能点
 熟悉：Nodejs, HTML, CSS, JS
+
 了解：
   * Languages: JAVA, JSP, ASP, C#, C, C++,
   * DB & Cache: MySQL, MongoDB, Redis, SQL-Server
