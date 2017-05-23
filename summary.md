@@ -9,8 +9,7 @@
     * ACM竞赛，[浙江省赛银奖](http://acm.tzc.edu.cn/acmhome/heroList.do?method=showTeamList&year=2013)
   * `2013-06 ~ 2013-09` [Farm](https://github.com/zhoukekestar/college-legacy).
 
-    Tags: `ASP`, `C#`, `SQL-Server`
-    
+    Tags: `ASP`, `C#`, `SQL-Server`<br>
     项目描述：老师外接的一个项目，通过收集农场温湿度，实时监控并可人为控制各种农场设备，以达到远程管理农场的目的。由2个计算机应用的同学，
     2个物理与电子信息科学的同学（负责设计电路，使用ZigBee搭建内网，收集温湿度等数据，通过2G/3G网络上传至服务器）共同完成。
 
@@ -89,6 +88,9 @@
 岗位：前端工程师
 * 提出后台接口使用GraphQL标准，并率先在运营后台的用户权限与认证模块得到有效的落地实施，取得不错的效果。
 * 最大化接近标准的页面架构方式，目前倾向riot
+  > Close to standards.
+  > Small learning curve.
+  > Small, but complete.
 
 最大化接近标准，主要是近年来，web发展迅猛，光编译工具就有grunt，gulp，webpack，browserify等等，前端框架也是层出不穷，
 其中包括但不限于angular, vue, react, polymer等，但个人觉得他们的出现是由于webcomponents的可实现性和兼容的存在的问题。但又因为解决这个问题而抛弃了太多了标准，所以，个人倾向于类似riot的这种小而美，接近标准，少一些私有接口，更重要的是标准带来的便利性。
