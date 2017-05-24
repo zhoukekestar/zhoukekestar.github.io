@@ -3,6 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Timeline</title>
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_q4z86thy1vjwcdi.css">
     <style media="screen">
       html,body {
         padding: 0;
@@ -83,7 +84,6 @@
         padding: 20px;
         border-radius: 5px;
         background-color: #967fb5;
-        text-align: right;
         position: relative;
         line-height: 1.8em;
         font-size: 14px;
@@ -93,7 +93,6 @@
       }
       ul li .right article {
         left: 50%;
-        text-align: left;
       }
 
       /* 显示描述 */
@@ -151,6 +150,7 @@
         padding: 20px;
         font-size: 20px;
         margin: -20px -20px 20px -20px;
+        text-align: right;
       }
       ul li article.text-left {
         text-align: left;
@@ -158,38 +158,141 @@
       ul li article a {
         color: #fff;
       }
+      /* 查看详情 */
       ul li article .detail {
-        max-height: 20px;
-        padding-top: 20px;
+        margin-top: 20px;
+        max-height: 0;
+        padding-top: 25px;
         overflow: hidden;
         box-sizing: content-box;
         transition: all .5s;
         cursor: pointer;
+        position: relative;
       }
-      ul li article .detail:before {
-        content: '查看详情';
+      ul li article .detail:before,
+      ul li article .detail:after {
+        content: '查看详情 下';
         display: block;
+        position: absolute;
+        top: 0;
+        transition: all .5s;
+        opacity: 1;
+        font-family: iconfont, sans-serif;
       }
-      ul li article .detail:hover:before {
-        text-decoration: underline;
+      ul li article .detail:hover:before,
+      ul li article .detail:hover:after {
+        text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+      }
+
+      ul li article .detail:after {
+        margin-top: 20px;
+        content: '详情 上';
+        opacity: 0;
       }
       ul li article .detail.show {
-        max-height: 200px;
+        max-height: 500px;
       }
       ul li article .detail.show:before {
-        content: '详情：';
+        margin-top: -20px;
+        opacity: 0;
       }
+      ul li article .detail.show:after {
+        margin-top: 0;
+        opacity: 1;
+      }
+      ul li article blockquote p {
+        margin: 0;
+      }
+      /* tags */
       ul li article .tags span {
         border: solid 1px #fff;
         border-radius: 4px;
         padding: 3px 5px;
       }
+      .iconfont {
+        font-weight: 100;
+        margin-right: .5em;
+      }
+      #attention {
+        position: fixed;
+        right: 0;
+        border-radius: 5px 0 0 5px;
+        background: #fff;
+        padding: 10px;
+        text-align: right;
+        box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.44);
+        line-height: 1.8em;
+        font-family: cursive;
+        font-size: 12px;
+        top: 10px;
+      }
     </style>
   </head>
   <body>
+    <p id='attention'>It's a developing edtion, not final version.<br>非最终版，还在开发中...</p>
     <ul class='time-line'>
       <li>
         <span class='year'>now</span>
+      </li>
+      <li>
+        <div class="right theme-red">
+          <article>
+            <h2><i class='iconfont icon-company'></i>向标准看齐</h2>
+            <p class='tags'>
+              <span>Riot</span>
+              <span>WebComponents</span>
+              <span>CustomElement</span>
+            </p>
+            使用Riot进行组件化，浏览器兼容较好的采用CustomElement V0标准。使用Riot的主要因素(引用自官网)：
+            <blockquote>
+              <p>Close to standards.</p>
+              <p>Small learning curve.</p>
+              <p>Small, but complete.</p>
+            </blockquote>
+            <div class="detail">
+              <p>
+                最大化接近标准，主要是近年来，web发展迅猛，光编译工具就有grunt，gulp，webpack，browserify等等，
+                前端框架也是层出不穷， 其中包括但不限于angular, vue, react, polymer等，
+                但个人觉得他们的出现是由于webcomponents的可实现性和兼容的存在的问题。
+                但又因为解决这个问题而抛弃了太多了标准，所以，个人倾向于类似riot的这种小而美，接近标准，少一些私有接口，更重要的是标准带来的便利性。
+              </p>
+              <p>相关开源的项目：</p>
+
+              <i class='iconfont icon-github'></i>
+              <a href="https://github.com/zhoukekestar/form-json" target="_blank">form-json</a>
+              <br>
+              <i class='iconfont icon-github'></i>
+              <a href="https://github.com/zhoukekestar/input-validator" target="_blank">input-validator</a>
+              <br>
+              <i class='iconfont icon-github'></i>
+              <a href="https://github.com/zhoukekestar/webcomponents" target="_blank">webcomponents</a>
+            </div>
+          </article>
+        </div>
+        <span class='month'>05</span>
+      </li>
+      <li>
+        <div class="left">
+          <article>
+            <h2><i class='iconfont icon-company'></i>灵活的接口调用</h2>
+            <p class='tags'>
+              <span>GraphQL</span>
+              <span>MySQL</span>
+              <span>Nodejs</span>
+            </p>
+            率先在运营后台接口采用GraphQL标准，实现用户权限与认证模块相关功能，使得前端接口调用更为灵活，取得不错的效果。
+            <div class="detail">
+              <p>
+                由于运营后台的权限认证与公司主要业务关联性不大，加上后台业务比较繁重，故由前端采用nodejs实现该功能。</p>
+                鉴权方式采用JWT方式，nodejs使用与java后台约定的密钥加密，使得接口调用做到无共享架构。
+              </p>
+              <p>相关开源的项目：<p>
+              <i class='iconfont icon-github'></i>
+              <a href="https://github.com/zhoukekestar/graphql-quick-start" target="_blank">graphql-quick-start</a>
+            </div>
+          </article>
+        </div>
+        <span class='month'>03</span>
       </li>
       <li>
         <div class="right">
@@ -373,7 +476,7 @@
       <li>
         <div class="right">
           <article>
-            <h2>ACM (2013-05)</h2>
+            <h2><i class='iconfont icon-college'></i>ACM (2013-05)</h2>
             <p class='tags'><span>C</span></p>
             ACM竞赛，<a href="http://acm.tzc.edu.cn/acmhome/heroList.do?method=showTeamList&year=2013">浙江省赛银奖</a>
             <div class='detail'>
@@ -405,7 +508,7 @@
       <li>
         <div class='left theme-red'>
           <article>
-            <h2>高中生涯</h2>
+            <h2><i class='iconfont icon-college'></i>高中生涯</h2>
             高三组数学竞赛，省二等奖<br>
             <a href='https://zhoukekestar.github.io/assets/2011_math.html' target="_blank">具体名单</a>.
           </article>
@@ -429,14 +532,17 @@
           return false;
         }
 
-        return (
-           rect.top   >= 0
-        // Pre load.
-        && rect.top   <= ((window.innerHeight || document.documentElement.clientHeight) + 100)
-        && rect.left  >= 0
-        // Hide carousel except first image. Do not add equal sign.
-        && rect.left  < (window.innerWidth || document.documentElement.clientWidth)
-        )
+        if (rect.top >= 0
+          && rect.top   <= ((window.innerHeight || document.documentElement.clientHeight) - 100)) {
+          return true;
+        }
+
+        if (rect.bottom >= 100
+          && rect.top   <= ((window.innerHeight || document.documentElement.clientHeight) - 100)) {
+          return true;
+        }
+
+        return false;
       }
 
       var articles = [].slice.apply(document.querySelectorAll('li article'));
