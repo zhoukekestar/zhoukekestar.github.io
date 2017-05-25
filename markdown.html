@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Markdown</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bootstrap/3.2.0/css/bootstrap.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/highlight.js/9.1.0/styles/github.min.css">
+    <!-- <link rel="stylesheet" href="https://cdn.bootcss.com/github-markdown-css/2.6.0/github-markdown.min.css"> -->
+    <style>
+      body {
+        width: 980px;
+        margin: 0 auto;
+      }
+      h2 {
+        margin: 40px 0 20px 0;
+        padding-top: 40px;
+        border-top: solid 1px #f4f4f4;
+      }
+      h4 {
+        margin-top: 30px;
+      }
+    </style>
+  </head>
+  <body style='padding: 50px;'>
+    <div id="container"></div>
+    <script src='https://cdn.bootcss.com/markdown-it/8.3.1/markdown-it.min.js'></script>
+    <script src='https://cdn.bootcss.com/highlight.js/9.11.0/highlight.min.js'></script>
+    <script src='https://cdn.bootcss.com/highlight.js/9.11.0/languages/javascript.min.js'></script>
+    <script>
+      var markdown = new markdownit();
+      var file;
+      file = (file = location.search.match(/file=([^&=]*)/)) && file[1];
+      file = file || './README.md';
+      
+      fetch(file).then(function (r) {
+        return r.text();
+      }).then(function (r) {
+        document.querySelector('#container').innerHTML = markdown.render(r);
+        Array.from(document.querySelectorAll('pre code')).forEach(function (block) {
+          hljs.highlightBlock(block)
+        });
+      })
+
+    </script>
+  </body>
+</html>
