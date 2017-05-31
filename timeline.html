@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
     <title>Timeline</title>
-    <link rel="stylesheet" href="https://at.alicdn.com/t/font_q4z86thy1vjwcdi.css">
+    <link rel="stylesheet" href="https://at.alicdn.com/t/font_lbyfqsobskz0vn29.css">
     <style media="screen">
       html,body {
         padding: 0;
@@ -18,11 +18,11 @@
         color: #fff;
         padding: 0;
       }
-      ul li {
+      ul.time-line > li {
         position: relative;
         padding: 30px 0;
       }
-      ul li:after {
+      ul.time-line > li:after {
         content: '';
         display: block;
         height: 100%;
@@ -33,15 +33,15 @@
         background: #5b607d;
         margin-left: -3px;
       }
-      ul li:first-child:after {
+      ul.time-line > li:first-child:after {
         height: 50%;
         top: 50%;
       }
-      ul li:last-child:after {
+      ul.time-line > li:last-child:after {
         height: 50%;
       }
-      ul li span.year,
-      ul li span.month {
+      ul.time-line > li span.year,
+      ul.time-line > li span.month {
         width: 3em;
         height: 3em;
         display: block;
@@ -57,7 +57,7 @@
         text-align: center;
         z-index: 2;
       }
-      ul li span.month {
+      ul.time-line > li span.month {
         width: 2em;
         height: 2em;
         line-height: 2em;
@@ -66,20 +66,20 @@
         box-shadow: 0 0 3px 1px rgba(0, 0, 0, 0.4);
       }
       /* 左右包裹元素 */
-      ul li .left,
-      ul li .right {
+      ul.time-line > li .left,
+      ul.time-line > li .right {
         padding: 50px;
         width: 50%;
         box-sizing: border-box;
         left: 0;
       }
-      ul li .right {
+      ul.time-line > li .right {
         left: 50%;
         position: relative;
       }
       /* 描述 */
-      ul li .left article,
-      ul li .right article {
+      ul.time-line > li .left article,
+      ul.time-line > li .right article {
         left: -50%;
         padding: 20px;
         border-radius: 5px;
@@ -91,23 +91,23 @@
         opacity: 0;
         transition: .5s all;
       }
-      ul li .right article {
+      ul.time-line > li .right article {
         left: 50%;
       }
 
       /* 显示描述 */
-      ul li .left article.show {
+      ul.time-line > li .left article.show {
         left: 0;
         opacity: 1;
       }
-      ul li .right article.show {
+      ul.time-line > li .right article.show {
         left: 0;
         opacity: 1;
       }
 
       /* 描述三角 */
-      ul li .left article:after,
-      ul li .right article:after {
+      ul.time-line > li .left article:after,
+      ul.time-line > li .right article:after {
         content: '';
         border-width: 10px;
         display: block;
@@ -118,48 +118,48 @@
         border-color: transparent transparent transparent #967fb5;
         margin-top: -10px;
       }
-      ul li .right article:after {
+      ul.time-line > li .right article:after {
         left: -20px;
         border-color: transparent #967fb5 transparent transparent;
         right: auto;
       }
       /* 描述主题 */
-      ul li .left.theme-red article,
-      ul li .right.theme-red article {
+      ul.time-line > li .left.theme-red article,
+      ul.time-line > li .right.theme-red article {
         background-color: #a8618d;
       }
-      ul li .left.theme-green article,
-      ul li .right.theme-green article {
+      ul.time-line > li .left.theme-green article,
+      ul.time-line > li .right.theme-green article {
         background-color: #3e999e;
       }
-      ul li .left.theme-red  article:after {
+      ul.time-line > li .left.theme-red  article:after {
         border-color: transparent transparent transparent #a8618d;
       }
-      ul li .right.theme-red  article:after {
+      ul.time-line > li .right.theme-red  article:after {
         border-color: transparent #a8618d transparent transparent;
       }
-      ul li .left.theme-green  article:after {
+      ul.time-line > li .left.theme-green  article:after {
         border-color: transparent transparent transparent #3e999e;
       }
-      ul li .right.theme-green  article:after {
+      ul.time-line > li .right.theme-green  article:after {
         border-color: transparent #3e999e transparent transparent;
       }
       /* 描述样式 */
-      ul li article h2 {
+      ul.time-line > li article h2 {
         border-bottom: solid 1px rgba(238, 238, 238, 0.5);
         padding: 20px;
         font-size: 20px;
         margin: -20px -20px 20px -20px;
         text-align: right;
       }
-      ul li article.text-left {
+      ul.time-line > li article.text-left {
         text-align: left;
       }
-      ul li article a {
+      ul.time-line > li article a {
         color: #fff;
       }
       /* 查看详情 */
-      ul li article .detail {
+      ul.time-line > li article .detail {
         margin-top: 20px;
         max-height: 0;
         padding-top: 25px;
@@ -169,8 +169,8 @@
         cursor: pointer;
         position: relative;
       }
-      ul li article .detail:before,
-      ul li article .detail:after {
+      ul.time-line > li article .detail:before,
+      ul.time-line > li article .detail:after {
         content: '查看详情 下';
         display: block;
         position: absolute;
@@ -179,32 +179,32 @@
         opacity: 1;
         font-family: iconfont, sans-serif;
       }
-      ul li article .detail:hover:before,
-      ul li article .detail:hover:after {
+      ul.time-line > li article .detail:hover:before,
+      ul.time-line > li article .detail:hover:after {
         text-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
       }
 
-      ul li article .detail:after {
+      ul.time-line > li article .detail:after {
         margin-top: 20px;
         content: '详情 上';
         opacity: 0;
       }
-      ul li article .detail.show {
+      ul.time-line > li article .detail.show {
         max-height: 500px;
       }
-      ul li article .detail.show:before {
+      ul.time-line > li article .detail.show:before {
         margin-top: -20px;
         opacity: 0;
       }
-      ul li article .detail.show:after {
+      ul.time-line > li article .detail.show:after {
         margin-top: 0;
         opacity: 1;
       }
-      ul li article blockquote p {
+      ul.time-line > li article blockquote p {
         margin: 0;
       }
       /* tags */
-      ul li article .tags span {
+      ul.time-line > li article .tags span {
         border: solid 1px #fff;
         border-radius: 4px;
         padding: 3px 5px;
@@ -226,7 +226,29 @@
         font-size: 12px;
         top: 10px;
       }
+      i.icon-huangze,
+      i.icon-tzc,
+      i.icon-toomao {
+        background-image: url(./assets/images/icon-tzc.jpg);
+        height: 1em;
+        width: 1em;
+        display: inline-block;
+        background-size: contain;
+        border-radius: 50%;
+        vertical-align: middle;
+        margin-right: 5px;
+      }
+      i.icon-toomao {
+        background-image: url(./assets/images/icon-toomao.jpg);
+      }
+      i.icon-huangze {
+        background-image: url(./assets/images/icon-huangze.jpg);
+      }
+      .hint--bottom:after {
+        font-style: normal;
+      }
     </style>
+    <link rel="stylesheet" href="https://cdn.bootcss.com/hint.css/2.5.0/hint.base.min.css">
   </head>
   <body>
     <p id='attention'>It's a developing edtion, not final version.<br>非最终版，还在开发中...</p>
@@ -235,15 +257,22 @@
         <span class='year'>now</span>
       </li>
       <li>
-        <div class="right theme-red">
+        <div class="left theme-red">
           <article>
-            <h2><i class='iconfont icon-company'></i>向标准看齐</h2>
-            <p class='tags'>
+            <h2>
+              <i class='iconfont icon-html5' title='前端工程师'></i>
+              <i class='icon-toomao hint--bottom' aria-label='浙江蓝麦电子商务股份有限公司'></i>
+              向标准看齐
+            </h2>
+            <h4 class='tags'>
               <span>Riot</span>
               <span>WebComponents</span>
               <span>CustomElement</span>
-            </p>
-            使用Riot进行组件化，浏览器兼容较好的采用CustomElement V0标准。使用Riot的主要因素(引用自官网)：
+            </h4>
+            <p>使用Riot进行组件化，浏览器兼容较好的采用CustomElement V0标准。</p>
+            <p>使用Riot的主要因素：</p>
+            <p>1. 与<a href="https://github.com/zhoukekestar/modules/blob/master/src/webcom/README.md" target="_blank">之前的组件化</a>标准类似，迁移成本最低</p>
+            <p>2. 相比其他框架的优势(引用自官网) </p>
             <blockquote>
               <p>Close to standards.</p>
               <p>Small learning curve.</p>
@@ -252,72 +281,63 @@
             <div class="detail">
               <p>
                 最大化接近标准，主要是近年来，web发展迅猛，光编译工具就有grunt，gulp，webpack，browserify等等，
-                前端框架也是层出不穷， 其中包括但不限于angular, vue, react, polymer等，
-                但个人觉得他们的出现是由于webcomponents的可实现性和兼容的存在的问题。
-                但又因为解决这个问题而抛弃了太多了标准，所以，个人倾向于类似riot的这种小而美，接近标准，少一些私有接口，更重要的是标准带来的便利性。
+                前端框架也是层出不穷， 其中包括但不限于angular, vue, react, polymer等
+              </p>
+              <p>
+                个人觉得他们的出现是由于webcomponents的可实施性和兼容的存在的问题。
+                但因为解决这个问题而抛弃了太多了标准。所以，个人倾向于类似riot的这种小而美，接近标准，少一些私有接口，更重要的是标准带来的便利性。
               </p>
               <p>相关开源的项目：</p>
-
-              <i class='iconfont icon-github'></i>
-              <a href="https://github.com/zhoukekestar/form-json" target="_blank">form-json</a>
-              <br>
-              <i class='iconfont icon-github'></i>
-              <a href="https://github.com/zhoukekestar/input-validator" target="_blank">input-validator</a>
-              <br>
-              <i class='iconfont icon-github'></i>
-              <a href="https://github.com/zhoukekestar/webcomponents" target="_blank">webcomponents</a>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/form-json" target="_blank">form-json</a>
+                <span>基于form标准的application/form-json的扩展</span>
+              </p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/input-validator" target="_blank">input-validator</a>
+                <span>基于form-validate的扩展</span>
+              </p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/webcomponents" target="_blank">webcomponents</a>
+                <span>采用CustomElement标准的组件</span>
+              </p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/modules/blob/master/src/webcom/README.md" target="_blank">webcom</a>
+                <span>与riot类似的组件化工具</span>
+              </p>
             </div>
           </article>
         </div>
         <span class='month'>05</span>
       </li>
       <li>
-        <div class="left">
+        <div class="right">
           <article>
-            <h2><i class='iconfont icon-company'></i>灵活的接口调用</h2>
-            <p class='tags'>
+            <h2>
+              <i class='iconfont icon-html5' title='前端工程师'></i>
+              <i class='icon-toomao hint--bottom' aria-label='浙江蓝麦电子商务股份有限公司'></i>
+              灵活的接口调用
+            </h2>
+            <h4 class='tags'>
               <span>GraphQL</span>
               <span>MySQL</span>
               <span>Nodejs</span>
-            </p>
-            率先在运营后台接口采用GraphQL标准，实现用户权限与认证模块相关功能，使得前端接口调用更为灵活，取得不错的效果。
+            </h4>
+            <p>率先在运营后台接口采用GraphQL标准，实现用户权限与认证模块相关功能，使得前端接口调用更为灵活，取得不错的效果。</p>
             <div class="detail">
               <p>
                 由于运营后台的权限认证与公司主要业务关联性不大，加上后台业务比较繁重，故由前端采用nodejs实现该功能。</p>
                 鉴权方式采用JWT方式，nodejs使用与java后台约定的密钥加密，使得接口调用做到无共享架构。
               </p>
               <p>相关开源的项目：<p>
-              <i class='iconfont icon-github'></i>
-              <a href="https://github.com/zhoukekestar/graphql-quick-start" target="_blank">graphql-quick-start</a>
-            </div>
-          </article>
-        </div>
-        <span class='month'>03</span>
-      </li>
-      <li>
-        <div class="right">
-          <article>
-            <p class='tags'>
-              <span>GraphQL</span>
-              <span>WebComponents</span>
-              <span>Riot</span>
-            </p>
-            岗位：前端工程师
-            <br>
-            * 提出后台接口使用GraphQL标准，并率先在运营后台的用户权限与认证模块得到有效的落地实施，取得不错的效果。
-            <br>
-            * 最大化接近标准的页面架构方式，目前倾向riot
-
-            <div class="detail">
-              最大化接近标准，主要是近年来，web发展迅猛，光编译工具就有grunt，gulp，webpack，browserify等等，前端框架也是层出不穷，
-              其中包括但不限于angular, vue, react, polymer等，但个人觉得他们的出现是由于webcomponents的可实现性和兼容的存在的问题。
-              但又因为解决这个问题而抛弃了太多了标准，所以，个人倾向于类似riot的这种小而美，接近标准，少一些私有接口，更重要的是标准带来的便利性。
-
-              期间开源的项目：
-              <a href="https://github.com/zhoukekestar/webcomponents">web-components</a>
-              <a href="https://github.com/zhoukekestar/form-json">form-json</a>
-              <a href="https://github.com/zhoukekestar/input-validator">input-validator</a>
-
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/graphql-quick-start" target="_blank">graphql-quick-start</a>
+                <span>GraphQL的快速构建工具</span>
+              </p>
             </div>
           </article>
         </div>
@@ -328,34 +348,40 @@
       </li>
       <li>
         <div class="left theme-red">
-          <article class="text-left">
-            <h2>2016-01 ~ 2016-12</h2>
-            <p class='tags'>
+          <article>
+            <h2>
+              <i class='iconfont icon-html5' title='前端工程师'></i>
+              <i class='icon-toomao hint--bottom' aria-label='浙江蓝麦电子商务股份有限公司'></i>
+              更高效的前端(2016-01 ~ 2016-12)
+            </h2>
+            <h4 class='tags'>
               <span>Docker</span>
               <span>Git</span>
               <span>Weex</span>
               <span>Android</span>
-            </p>
-            岗位：前端工程师
-            <br>
-            * 提出采用git + Docker化部署方案，并在前端领域得到了技术总监的许可，先于后端在阿里云上进行docker部署。
-            <br>
-            采用`git push + auto build + deploy image`的工作流，在测试环境实现了代码变更的自动部署，极大提高了部署效率。
-            <br>
-            * 提出使用Weex编写android和ios客户端
+            </h4>
+            <ul>
+              <li>提出采用git + Docker化部署方案，并在前端领域得到了技术总监的许可，先于后端在阿里云上进行docker部署。</li>
+              <li>采用`git push + auto build + deploy image`的工作流，在测试环境实现了代码变更的自动部署，极大提高了部署效率。正式环境也只需点击确认按钮即可发布。</li>
+              <li>提出使用Weex编写android和iOS客户端，统一复用三端代码</li>
+            </ul>
 
             <div class="detail">
-              关于Docker，之前，阿里云有推出他自己的云引擎ACE，最先采用的部署方式的ACE，后来，渐渐因为nodejs版本更新不及时，
-              相应速度和稳定性方面的问题，渐渐转向docker。
-              <br>
-              关于weex，也是因为2015的12月参加了阿里的D2，首次接触到weex，提出3端一致（晚于react）给我较大的震撼，一直惦记着。
+              <p>关于Docker，之前，阿里云有推出他自己的云引擎ACE，最先采用的部署方式的ACE，后来，渐渐因为nodejs版本更新不及时，
+              相应速度和稳定性方面的问题，渐渐转向docker。</p>
+
+              <p>关于weex，也是因为2015的12月参加了阿里的D2，首次接触到weex，提出3端一致（晚于react）给我较大的震撼，一直惦记着。
               到2016年6月开源，一直关注，云栖大会上，拉上技术部的小伙伴一起参加了。
               期间，能够看到后台重点推docker，前端重点推weex。于是，我也写了一个android版的
-              <a href="https://github.com/zhoukekestar/weex-quick-start">weex-quick-start</a>
-              进行技术调研。
+              <a href="https://github.com/zhoukekestar/weex-quick-start" target="_blank">weex-quick-start</a>
+              进行技术调研。</p>
 
-              期间开源的项目： <a href="https://github.com/zhoukekestar/weex-quick-start">weex-quick-start</a>
-
+              <p>相关开源项目：</p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/weex-quick-start" target="_blank">weex-quick-start</a>
+                <span>快速搭建android版的Weex</span>
+              </p>
             </div>
           </article>
         </div>
@@ -367,25 +393,34 @@
       <li>
         <div class="right theme-green">
           <article>
-            <h2>2015-07 ~ 2015-12</h2>
-            <p class='tags'>
+            <h2>
+              <i class='iconfont icon-html5' title='前端工程师'></i>
+              <i class='icon-toomao hint--bottom' aria-label='浙江蓝麦电子商务股份有限公司'></i>
+              业余的前端(2015-07 ~ 2015-12)</h2>
+            <h4 class='tags'>
               <span>Nodejs</span>
               <span>AMD</span>
-              <span>polymer</span>
-            </p>
-            岗位：前端工程师
-            <br>
-            * 提出前后端分离的解决方案，使得项目得到较大的优化。使得项目问题定位更准确，前端优化更为灵活。
-            <br>
-            * 采用nodejs编写前端，并用模块化方式（require.js）组织前端页面。使得项目和页面结构更为清晰。
-            <br>
-            * 实施组件化（特指封装一段HTML，JS，CSS）方案，
-            参考  <a href="https://github.com/tmallfe/tmallfe.github.io/issues/34">tmall和polymer</a>)，
-            造了一个简单组件化轮子`modules/webcom`。
-            这使得前端页面的代码重用率有较大提升，项目推进速度加快。
-
-            期间开源了[modules](https://github.com/zhoukekestar/modules)
-
+              <span>Polymer</span>
+            </h4>
+            <ul>
+              <li>提出前后端分离的解决方案，使得项目得到较大的优化。使得项目问题定位更准确，前端优化更为灵活。</li>
+              <li>采用nodejs编写前端，并用模块化方式(require.js)组织前端页面。使得项目和页面结构更为清晰。</li>
+              <li>实施组件化(特指封装一段HTML，JS，CSS)方案，</li>
+            </ul>
+            <div class='detail'>
+              <p>
+                参考
+                <a href="https://github.com/tmallfe/tmallfe.github.io/issues/34" target="_blank">(tmall和polymer)</a>，
+                造了一个简单组件化轮子modules/webcom。
+                这使得前端页面的代码重用率有较大提升，项目推进速度加快。
+              </p>
+              <p>相关开源项目：</p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/modules" target="_blank">modules</a>
+                <span>一切皆模块</span>
+              </p>
+            </div>
           </article>
         </div>
         <span class='month'>07</span>
@@ -395,33 +430,43 @@
       </li>
       <li>
         <div class="left">
-          <article class="text-left">
-            <h2>2014-03 ~ 2015-06</h2>
-            <p class='tags'>
+          <article>
+            <h2>
+              <i class='iconfont icon-java' title='Java工程师'></i>
+              <i class='icon-toomao hint--bottom' aria-label='浙江蓝麦电子商务股份有限公司'></i>
+              业余的后端(2014-03 ~ 2015-06)
+            </h2>
+            <h4 class='tags'>
               <span>Java</span>
               <span>RESTful</span>
               <span>JSP</span>
-              <span>Spring</span>
               <span>Servlet</span>
               <span>Mybatis</span>
               <span>MySQL</span>
-            </p>
-            岗位：Java开发工程师
-            <br>
-            工作内容：
-            <br>
-            * 公司基础技术服务的搭建，如：服务器的Linux安装，SVN，FTP搭建，Web Server（apache，nginx，tomcat）的搭建。
-            <br>
-            * 负责公司的后台的接口设计、实现和部署（包括公司和阿里云服务器）。提出采用RESTful风格的接口规范，以及整体迁移阿里云的建议，并得到采纳。
-            <br>
-            * 负责实现后台安全模块、后台支付模块。对接第三方支付，如支付宝支付，银联支付，满足了当时公司的支付需求，使得公司快速实现现金流的运转。
-            <br>
-            * 使用servlet写服务，JSP写web页面。负责土冒后台管理、土冒移动端页面、微信活动。满足了公司初期的后台管理。及时快速地发布土冒移动版、微信优惠活动，使得公司影响力与日俱增。
+            </h4>
+            <ul>
+              <li>公司基础技术服务的搭建，如：服务器的Linux安装，SVN，FTP搭建，Web Server（apache，nginx，tomcat）的搭建。</li>
+              <li>负责公司的后台的接口设计、实现和部署（包括公司和阿里云服务器）。提出采用RESTful风格的接口规范，以及整体迁移阿里云的建议，并得到采纳。</li>
+              <li>负责实现后台安全模块、后台支付模块。对接第三方支付，如支付宝支付，银联支付，满足了当时公司的支付需求，使得公司快速实现现金流的运转。</li>
+              <li>使用servlet写服务，JSP写web页面。负责土冒后台管理、土冒移动端页面、微信活动。满足了公司初期的后台管理。及时快速地发布土冒移动版、微信优惠活动，使得公司影响力与日俱增。</li>
+            </ul>
             <div class="detail">
-              期间开源的项目：
-              <a href="https://github.com/zhoukekestar/SSH-Start">SSH-start</a>,
-              <a href="https://github.com/zhoukekestar/zkk-components">zkk-components</a>
-              <a href="https://github.com/zhoukekestar/modules-for-java">modules-for-java</a>
+              <p>相关开源的项目：</p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/SSH-Start" target="_blank">SSH-start</a>
+                <span>学习三大框架的笔记</span>
+              </p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/zkk-components" target="_blank">zkk-components</a>
+                <span>模块化Java</span>
+              </p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/modules-for-java" target="_blank">modules-for-java</a>
+                <span>模块化Java</span>
+              </p>
             </div>
 
           </article>
@@ -430,57 +475,136 @@
         <span class='month'>03</span>
       </li>
       <li>
+        <div class="right">
+          <article>
+            <h2>
+              <i class='iconfont icon-college'></i>
+              <i class='icon-tzc hint--bottom' aria-label='台州学院'></i>
+              科目作品
+            </h2>
+            <h4 class='tags'>
+              <span>OpenGL</span>
+              <span>Socket</span>
+              <span>Java</span>
+              <span>C#</span>
+            </h4>
+            <ul>
+              <li>
+                基于Java和Socket的简易聊天，
+                <a href="https://github.com/zhoukekestar/college-legacy/tree/master/chat/src" target="_blank">college-legacy/chat</a>
+              </li>
+              <li>
+                基于C#和Socket的五子棋对战，
+                <a href="https://github.com/zhoukekestar/college-legacy/tree/master/gobang" target="_blank">college-legacy/gobang</a>
+              </li>
+              <li>
+                基于C++和OpenGl的数字魔方，
+                <a href="https://github.com/zhoukekestar/college-legacy/tree/master/magic-cube" target="_blank">college-legacy/magic-cube</a>
+              </li>
+            </ul>
+            <div class="detail">
+              <p>跟高中一样，在别人眼中并不是很好的大学，但在我看来，这所大学给予的很多很多，一度让我怀疑，我当初如果上更好的大学，能有这样的资源让我成长吗？感恩台州学院。</p>
+              <p>相关开源的项目：</p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/college-legacy" target="_blank">college-legacy</a>
+                <span>大学遗留项目</span>
+              </p>
+            </div>
+
+          </article>
+
+        </div>
+        <span class='month'>02</span>
+      </li>
+      <li>
         <span class='year'>2014</span>
       </li>
       <li>
-        <div class='right theme-red'>
-          <article class="text-left">
-            <h2>mobile-life (2013-09 ~ 2014-02)</h2>
-            <p class='tags'>
+        <div class='left theme-red'>
+          <article>
+            <h2>
+              <i class='iconfont icon-college'></i>
+              <i class='icon-tzc hint--bottom' aria-label='台州学院'></i>
+              移动生活(2013-09 ~ 2014-02)
+            </h2>
+            <h4 class='tags'>
               <span>C</span>
               <span>Linux</span>
               <span>JAVA</span>
-            </p>
-            项目描述：竞赛的课题，通过下发红外指令，控制一些可由遥控器控制的家电（车库，空调，电视等）。实践理论假设，并发表一篇论文。
-            <br>
-            职责：带领小组成员通过开发嵌入式系统的软件和JSP控制页面，实现预定目标。
-            <br>
-            结果：一篇公开发表的论文: <a href="http://d.wanfangdata.com.cn/Periodical/hljkjxx201511146">远程控制家具的软件设计]</a>。
+            </h4>
+            <p>项目描述：竞赛的课题，通过下发红外指令，远程控制一些可由遥控器控制的家电（车库，空调，电视等）。实践理论假设，并发表一篇论文。</p>
+            <p>职责：带领小组成员通过开发嵌入式系统的软件和JSP控制页面，实现预定目标。</p>
+            <p>成果：一篇公开发表的论文: <a href="http://d.wanfangdata.com.cn/Periodical/hljkjxx201511146" target="_blank">远程控制家具的软件设计]</a>。</p>
 
             <div class='detail'>
-            项目进行过程中，需要查阅大量linux和嵌入式的资料，自学能力得到较大提升。对Linux和C有了更深入的了解，其中也了解到了pipe、thread等概念。
+              <p>项目进行过程中，需要查阅大量linux和嵌入式的资料，自学能力得到较大提升。对Linux和C有了更深入的了解，其中也了解到了pipe、thread等概念。对C在底层系统的应用有了一定的了解</p>
+              <p>由于项目是嵌入式系统开发，不是单片机开发，所以，该项目没有物电学生的参与，项目成果都是计算机专业的学生。</p>
+              <p>相关开源项目：</p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/MobileLife" target="_blank">MobileLife</a>
+                <span>包括Java后台和嵌入式部分源码</span>
+              </p>
             </div>
           </article>
         </div>
         <span class='month'>09</span>
       </li>
       <li>
-        <div class="left theme-green">
+        <div class="right theme-green">
           <article class='text-left'>
-            <h2>农场项目 (2013-05 ~ 2013-09)</h2>
-            <p class='tags'>
+            <h2>
+              <i class='iconfont icon-college'></i>
+              <i class='icon-tzc hint--bottom' aria-label='台州学院'></i>
+              农场项目 (2013-06 ~ 2013-09)
+            </h2>
+            <h4 class='tags'>
               <span>ASP</span>
               <span>C#</span>
               <span>SQL-Server</span>
-            </p>
-            项目描述：老师外接的一个项目，通过收集农场温湿度，实时监控并可人为控制各种农场设备，以达到远程管理农场的目的。由2个计算机应用的同学，
-            2个物理与电子信息科学的同学（负责设计电路，使用ZigBee搭建内网，收集温湿度等数据，通过2G/3G网络上传至服务器）共同完成。
-            <br>
-            职责：项目软件Web客户端和后台通讯负责人
-            <br>
-            结果：采用C#做为后台服务器，SQL-Server为数据持久层，使用ASP实时展现温湿度数据，并下发控制指令（如：打开风机使温度降低）。基本实现农场各项数据的实时监控，并能够下达指令，控制各种设备达到远程管理的效果。通过项目的参与，完整地了解整个的项目的流程，学校的理论知识也得到了实践。
+            </h4>
+            <p>项目描述：通过收集农场温湿度，实时监控并可人为控制各种农场设备，以达到远程管理农场的目的。</p>
+            <p>职责：项目软件Web客户端和后台通讯负责人。</p>
+            <p>方案：采用C#做为后台服务器，SQL-Server为数据持久层，使用ASP实时展现温湿度数据，并下发控制指令至后台服务器，并由后台服务器发送指令（如：打开风机使温度降低）。</p>
+            <p>成果：基本实现农场各项数据的实时监控，并能够下达指令，控制各种设备达到远程管理的效果。</p>
+
+            <div class='detail'>
+              <p>这是老师外接的一个项目，由2个计算机应用的同学，2个物理与电子信息科学的同学（负责设计电路，使用ZigBee搭建内网，收集温湿度等数据，通过2G/3G网络上传至服务器）共同完成。</p>
+              <p>通过项目的参与，完整地了解整个的项目的流程，学校的理论知识也得到了实践。</p>
+              <p>相关开源项目：</p>
+              <p>
+                <i class='iconfont icon-github'></i>
+                <a href="https://github.com/zhoukekestar/college-legacy/tree/master/farm" target="_blank">college-legacy/farm</a>
+                <span>农场部分代码</span>
+              </p>
+            </div>
           </article>
         </div>
         <span class='month'>06</span>
       </li>
       <li>
-        <div class="right">
+        <div class="left">
           <article>
-            <h2><i class='iconfont icon-college'></i>ACM (2013-05)</h2>
-            <p class='tags'><span>C</span></p>
-            ACM竞赛，<a href="http://acm.tzc.edu.cn/acmhome/heroList.do?method=showTeamList&year=2013">浙江省赛银奖</a>
+            <h2>
+              <i class='iconfont icon-college'></i>
+              <i class='icon-tzc hint--bottom' aria-label='台州学院'></i>
+              ACM省赛 (2013-05)
+            </h2>
+            <h4 class='tags'>
+              <span>C</span>
+              <span>C++</span>
+              <span>Math</span>
+            </h4>
+            <p>
+              ACM竞赛，三人团队赛获得
+              <a href="http://acm.tzc.edu.cn/acmhome/heroList.do?method=showTeamList&year=2013" target="_blank">浙江省赛银奖</a>
+            </p>
             <div class='detail'>
-              三个小伙伴组成的Team，在浙江大学紫荆港校区比赛，也是第一次来杭州，能取得这样的成绩，也是挺兴奋的。
+              当时我作为ACM会长，和同寝室的ACM队长
+              <a href="http://acm.tzc.edu.cn/acmhome/userDetail.do?userName=shfs" target="_blank">shfs</a>，还有一个学姐
+              <a href="http://acm.tzc.edu.cn/acmhome/userDetail.do?&userName=thalia" target="_blank">thalia</a>组成的Team
+              (压力还挺大的)，来到浙江大学紫荆港校区比赛，也是第一次来杭州，能取得这样的成绩，也是挺兴奋的。
             </div>
           </article>
         </div>
@@ -495,11 +619,26 @@
       <li>
         <div class='right'>
           <article>
-            <h2>ACM (2011-09 ~ 2013-05)</h2>
-            <p class='tags'><span>C</span></p>
-            ACM训练，个人 <a href="http://acm.tzc.edu.cn/acmhome/userDetail.do?userName=zhoukeke">题目列表</a><br>
+            <h2>
+              <i class='iconfont icon-college'></i>
+              <i class='icon-tzc hint--bottom' aria-label='台州学院'></i>
+              ACM (2011-09 ~ 2013-05)
+            </h2>
+            <h4 class='tags'>
+              <span>C</span>
+              <span>C++</span>
+              <span>Math</span>
+            </h4>
+            <p>
+              ACM训练，学习各种算法，各种刷题。查看个人
+              <a href="http://acm.tzc.edu.cn/acmhome/userDetail.do?userName=zhoukeke" target='_blank'>题目列表</a>
+            </p>
             <div class='detail'>
-              这是我第一次接触编程，以C为主，训练基本的语法和算法知识。
+              <p>
+                以刷题为主，训练基本的语法和算法知识。特别是在大一的暑假，在学长的带领下，接触到了快排，堆徘等排序算法，也通过不同的算法
+                <a href="http://acm.tzc.edu.cn/acmhome/showstatus.do?&userName=zhoukeke&problemId=1283" target="_blank">折腾过排序。</a>
+              </p>
+              <p>也学习深搜、广搜、几何、贪心、动态规划等等</p>
             </div>
           </article>
         </div>
@@ -508,9 +647,18 @@
       <li>
         <div class='left theme-red'>
           <article>
-            <h2><i class='iconfont icon-college'></i>高中生涯</h2>
-            高三组数学竞赛，省二等奖<br>
-            <a href='https://zhoukekestar.github.io/assets/2011_math.html' target="_blank">具体名单</a>.
+            <h2>
+              <i class='iconfont icon-college'></i>
+              <i class='icon-huangze hint--bottom' aria-label='黄泽中学'></i>
+              高中生涯
+            </h2>
+            <h4 class='tags'>
+              <span>Math</span>
+            </h4>
+            <p>优秀毕业学生 & 高三组数学竞赛，省二等奖。<a href='https://zhoukekestar.github.io/assets/2011_math.html' target="_blank">查看获奖具体名单</a>.</p>
+            <div class='detail'>
+              虽然高中遗憾错过嵊州一中，在别人看来也比较Low的学校，在我眼中，我所受到的教育并不比一中，二中差。也是在毕业的这个暑假，开始自学C语言。
+            </div>
           </article>
         </div>
         <span class='month'>05</span>
