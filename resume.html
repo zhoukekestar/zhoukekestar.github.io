@@ -3,8 +3,185 @@
   <head>
     <meta charset="utf-8">
     <title>Resume</title>
+    <style media="screen">
+      html,body {
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        padding-bottom: 60px;
+        font-family: 'Microsoft YaHei',sans-serif;
+      }
+      .line {
+        font-size: 0;
+      }
+      .line .left,
+      .line .right {
+        display: inline-block;
+        width: 50%;
+        position: relative;
+        padding-right: 14px;
+        box-sizing: border-box;
+      }
+      .line .right {
+        padding: 0px 0 0 20px;
+      }
+      .line .left:before {
+        content: '';
+        width: 100%;
+        background: #02ae51;
+        height: 28px;
+        display: block;
+      }
+      .line .left:after {
+        content: '';
+        display: block;
+        border: solid 14px;
+        border-color: transparent transparent #02ae51 #02ae51;
+        position: absolute;
+        right: -14px;
+        top: 0;
+      }
+      .line .right:before {
+        content: '';
+        display: block;
+        border: solid 10px;
+        border-color: #95d142 #95d142 transparent transparent;
+        width: 0;
+        position: absolute;
+        left: 0px;
+      }
+      .line .right:after {
+        width: 100%;
+        height: 20px;
+        background: #95d142;
+        display: block;
+        content: '';
+      }
+      .title {
+        border-bottom: solid 2px #02ae51;
+      }
+      .title span {
+        background: #02ae51;
+        color: #fff;
+        padding: 5px 20px;
+        font-size: 14px;
+        position: relative;
+        display: inline-block;
+        letter-spacing: 5px;
+      }
+      .title span:after {
+        content: '';
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAC8AAAAUCAYAAAAdmmTCAAAClklEQVR42rVWTU8UQRBt+AP4BxD/gME7JFy87A43gwYvg54IwWCMxIuuV+RAwoGQIGETuBmZhhBgzcrGhegKIbgCciAE8MAGjHLy5GGaKbKzVtdW9w5hZ5IKH/26uqve69ctGqTjh9Ga6/cF+ro2hnw8DtG00OXL0heFcTCP4iCEdPpFnB8s0ig7FQT8nvic0jb2am9aUQz8nCsVNFzH2osqDITwnJx4d7cpts3TaF52NQbeHn9gO9tbHNNwvd/GTAwcitnO1tg2H3YqDJAHxuV/774Ju4rnPNwYVsGXDnHjR0tarkoBnnNe9wIo1bQYir+xcF/ROaB5XMDS6aZic0EBnuPGKhsaslSosACbBFa4gxyM3cO5OVyZBbdunadSoJRDvNyb0WTUln/u03nASvasuI5xtzKPFM1ZZsGtu9twdIf/e/p9QpPRg/Uhdt744aKGa88PsjmDAkZilw0O6DieD4xwuGc7k9GcyEtO1U02nPPQ8dsf+7TOpn9mfervEFBocA5SlTvjx0xVzmvdBbW0zo2ZrJTr7J2VJ5qVrv7ZTfESSm6J2WRLrLKhDgObRk702uREdF0Od+W7gKORkwAep9iVs2IOW2lLpodlLP/rf6H4ziASin4X2HRuch5uHPSMCpCgd27+8P57xVkuzS9kYiBW2dR0mCLvMAPbExru8dYoi2uUTjqSbLjLynaQTVLjrJTL0f5pUH+9lp2o+kkRHGSTE9mkYbt9bc4EDoPXmDspsGvcXHY1J4JnCCuhSydiDnIUOXCbrlUYHEbbo870eqVqCNdhncjmKlGcx/Y33VjQ5QZT4ZnTzb8YC6zwr9JEh7HzUaVxFcx86WuFhfRxVplyjB7MK9uj7nIdz/knZLIbxi8AaTTHaFtbnhwAAAAASUVORK5CYII=);
+        height: 29px;
+        width: 47px;
+        display: block;
+        position: absolute;
+        right: -47px;
+        top: 0;
+        background-size: 100% 100%;
+      }
+      header {
+        padding: 40px;
+        width: 680px;
+        margin: 0 auto;
+        color: #02ae51;
+        font-weight: bolder;
+        font-size: 30px;
+      }
+      header small {
+        font-size: 13px;
+        display: inline-block;
+        padding-left: 30px;
+        position: relative;
+        margin-left: 10px;
+      }
+      header small:before {
+        content: '';
+        display: block;
+        height: 40px;
+        width: 2px;
+        background: #02ae51;
+        position: absolute;
+        left: 0;
+      }
+      .resume {
+        width: 680px;
+        margin: 0 auto;
+        padding: 40px 0;
+        position: relative;
+        color: #7b7b7b;
+      }
+      .resume:before {
+        content: '';
+        height: 100%;
+        width: 2px;
+        background: #02ae51;
+        position: absolute;
+        left: 0;
+        top: 0;
+      }
+      .resume section {
+        padding: 20px;
+      }
+      .resume table td {
+        padding: 6px;
+      }
+    </style>
   </head>
   <body>
-
+    <header>
+      个人简历
+      <small>Personal resume<br>Thinksgiving. Love what you learn, Do what you want. Be the Best.</small>
+    </header>
+    <div class='line'>
+      <span class='left'></span>
+      <span class='right'></span>
+    </div>
+    <div class='resume'>
+      <h2 class="title"><span>基本信息</span></h2>
+      <section>
+        <table>
+          <tr>
+            <td>昵称</td>
+            <td style='width: 200px;'>zhoukekestar</td>
+            <td>民族</td>
+            <td>汉</td>
+          </tr>
+          <tr>
+            <td>Email</td>
+            <td>zhoukekestar@163.com</td>
+            <td>Github</td>
+            <td>zhoukekestar.github.io</td>
+          </tr>
+          <tr>
+            <td>毕业院校</td>
+            <td>台州学院</td>
+            <td>学历</td>
+            <td>本科</td>
+          </tr>
+        </table>
+      </section>
+      <h2 class="title"><span>教育背景</span></h2>
+      <section>
+        <p>hi</p>
+      </section>
+      <h2 class="title"><span>实习经历</span></h2>
+      <section>
+        <p>2017-01 ~ 至今</p>
+        <ul>
+          <li>向标准靠近，负责制定web前端框架标准，采用Riot</li>
+          <li>向标准靠近，负责制定web前端框架标准，采用Riot</li>
+        </ul>
+      </section>
+      <h2 class="title"><span>技能证书</span></h2>
+      <section>
+        <p>hi</p>
+      </section>
+      <h2 class="title"><span>自我评价</span></h2>
+      <section>
+        <p>hi</p>
+      </section>
+    </div>
   </body>
 </html>
