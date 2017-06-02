@@ -2,6 +2,7 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <base target="_blank">
     <title>Resume</title>
     <style media="screen">
       html,body {
@@ -127,9 +128,49 @@
       .resume table td {
         padding: 6px;
       }
+      #attention {
+        position: fixed;
+        right: 0;
+        border-radius: 5px 0 0 5px;
+        background: #fff;
+        padding: 10px;
+        text-align: right;
+        box-shadow: 0 0 9px 1px rgba(0, 0, 0, 0.44);
+        line-height: 1.8em;
+        font-family: cursive;
+        font-size: 12px;
+        top: 10px;
+      }
+      .resume a {
+        color: inherit;
+        margin: 0 6px;
+      }
+      .resume a:before {
+        content: '';
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAACw0lEQVRYR61X3W3bMBDmSaDgR2/QdIK6E9SZoM4EcSeoH23SQFXAovyWZIIkE9SZIMkEcSZoRnDfDAvWFSeIhkyJ+tejSPH77jvedydgPT+LxWICANcAMKGjEfEDADac89++7+9MOOgL3/f94eFwuNfABefuAOBqtVq9ZNd6IZCCPwPAqCogRPyhlHrQ+zoTaAKuQbMkOhEoAX9HxGkcxzvXdW8ZY99zuQe4pHR0IiCEoJxPjcPfOefj7IWTUpLk18a+Hef8c2sCQogRALxVgev1IhKIeNeFwC0A/MwQyEVuyi6l3GTTkZRo1a21rQshXgDgW7peCU77ilRrTSATzQl8Pp9fAMCnMAxfi4iTSTmO86cXH5BSzhhjU33hhBBTALhhjA0RcauU+poFslTMU2sFKNrBYLCj256C359FlpYZvbOVaxzHV60JaLAicET8F8fxaL1ef5R4xVMQBJNOBIrA0waU2G2ZUenUWQksl8sxIpKDaX/fHo/HO4oqvdGU8zPZm4LT/hyBlPVNmcP1EXlhM6ojWQfwR875zJwJTgr0AU5RUXW4rkvDCKVwyBij/r9RSm2LvCEhkDrUM9WwzdurIm/rqFAnctoTRdFfk6A5XLQhAUIIHwB+lXW1Ig/X4ERuv98PdXU0JUEE3oxRqrCxaO8nk2GMzbJ1zhh7VUqRNTd+QEqJ2a/IHsMwpLaZe0gJz/PI3ciCaQhN5kBEJALjxujkAyYByHi47UDz3nQlQOXxRYNRJ/M877Johrc1FppsWqfA0kwKSdgqpo5qNjUTH5BSnqmQevoZiZJyfQyCwBxMa1+HhEBa5+RYp1RoEog4cxyHhgwqV/PHo9YoVsbmzIqjKMqRKPm4M3iuG9qUMEmQF3ied2G7qLX1t7XjCiWSvx5bc2kCnlMg+zFVBw2d2dGbMfbAOadJJ/eb3RRY7/8PiaoO1oFbzGMAAAAASUVORK5CYII=);
+        height: .7em;
+        width: .7em;
+        background-size: contain;
+        display: inline-block;
+        margin-right: 5px;
+      }
+      .resume .skills span {
+        border: solid 1px #ccc;
+        border-radius: 5px;
+        font-size: 14px;
+        padding: 6px;
+        margin: 5px;
+        display: inline-block;
+      }
+      .resume .skills span.small {
+        font-size: 12px;
+        color: rgba(123, 123, 123, 0.61);
+        padding: 3px 6px;
+      }
     </style>
   </head>
   <body>
+    <p id='attention'>It's a developing edtion, not final version.<br>非最终版，还在开发中...</p>
     <header>
       个人简历
       <small>Personal resume<br>Thinksgiving. Love what you learn, Do what you want. Be the Best.</small>
@@ -144,7 +185,7 @@
         <table>
           <tr>
             <td>昵称</td>
-            <td style='width: 200px;'>zhoukekestar</td>
+            <td style='width: 230px;'>zhoukekestar</td>
             <td>民族</td>
             <td>汉</td>
           </tr>
@@ -152,7 +193,7 @@
             <td>Email</td>
             <td>zhoukekestar@163.com</td>
             <td>Github</td>
-            <td>zhoukekestar.github.io</td>
+            <td><a href="https://zhoukekestar.github.io">zhoukekestar.github.io</a></td>
           </tr>
           <tr>
             <td>毕业院校</td>
@@ -164,23 +205,53 @@
       </section>
       <h2 class="title"><span>教育背景</span></h2>
       <section>
-        <p>hi</p>
+        <p>2011 ~ 2015 台州学院 本科</p>
       </section>
       <h2 class="title"><span>实习经历</span></h2>
       <section>
         <p>2017-01 ~ 至今</p>
         <ul>
-          <li>向标准靠近，负责制定web前端框架标准，采用Riot</li>
-          <li>向标准靠近，负责制定web前端框架标准，采用Riot</li>
+          <li>负责制定web前端框架标准，向标准靠近，兼容性较差的采用Riot，较好的采用CustomElement V0</li>
+          <li>GraphQL, WebComponents</li>
         </ul>
+        <p>2016-01 ~ 2016-12</p>
+        <ul>
+          <li>Docker, Nodejs</li>
+          <li>Weex</li>
+        </ul>
+        <p>2015-01 ~ 2015-12</p>
+        <ul>
+          <li>Module</li>
+          <li>Java, Mybatis</li>
+        </ul>
+
+
+        <p>更多经历详情，可查看<a href="/timeline.html">timeline</a>。</p>
       </section>
-      <h2 class="title"><span>技能证书</span></h2>
-      <section>
-        <p>hi</p>
+      <h2 class="title"><span>技能</span></h2>
+      <section class='skills'>
+        <span>HTML</span>
+        <span>Javascript</span>
+        <span>CSS</span>
+        <span>Nodejs</span>
+        <span>ES6/7</span>
+        <span>HTTP(S)</span>
+        <span>WebComponents</span>
+        <span>Docker</span>
+        <span>Linux</span>
+        <span>Weex</span>
+        <span>MySQL</span>
+        <span>MongoDB</span>
+        <span>Redis</span>
+        <span>GraphQL</span>
+        <span class='small'>Java</span>
+        <span class='small'>Android</span>
+        <span class='small'>MyBatis</span>
+        <span class='small'>C/C++</span>
       </section>
       <h2 class="title"><span>自我评价</span></h2>
       <section>
-        <p>hi</p>
+        <p>太爱折腾，不过，自学能力不错，适应能力较强。</p>
       </section>
     </div>
   </body>
