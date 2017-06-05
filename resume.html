@@ -8,11 +8,57 @@
       html,body {
         margin: 0;
         padding: 0;
+        -webkit-print-color-adjust: exact;
       }
       body {
         padding-bottom: 60px;
         font-family: 'Microsoft YaHei',sans-serif;
       }
+      header {
+        padding: 40px;
+        width: 680px;
+        margin: 0 auto;
+        color: #02ae51;
+        font-weight: bolder;
+        font-size: 30px;
+        position: relative;
+      }
+      header small {
+        font-size: 13px;
+        display: inline-block;
+        padding-left: 30px;
+        position: relative;
+        margin-left: 10px;
+        line-height: 1.5em;
+      }
+      header small:before {
+        content: '';
+        display: block;
+        height: 40px;
+        width: 2px;
+        background: #02ae51;
+        position: absolute;
+        left: 0;
+      }
+      header .print {
+        background: #95d142;
+        display: block;
+        position: absolute;
+        right: 60px;
+        padding: 7px;
+        border-radius: 50%;
+        top: 40px;
+        cursor: pointer;
+      }
+
+      header .print:before {
+        content: '';
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABfElEQVRYR+2X603DQBCEZyogHUAJUAHQAVRASggV4FSASwgduANCB9BBSqCDQWNdrCOy7MtdFCuSV/KPKOfdz+N9mZjYOBRf0gOA+xMwfpDc9fkZA6gAGGJbALEEsCTZ6yMFACQNkmWSHLiaAWYFLkMBSc72uO5vQur31nBiWdwC8P2/0fktybV/d2UoaQXA1ybRcckx94YVySYGaGu9pOZTiUJvsArVWQAkPQF4B/Dqp54CwK92D1CfHcCvxoNtX4qTAMT5cTkAoS+8pWb3wLnHuBMmKxAA3IxKekMdar7bB44FKOoNfftAFkDGevZl2U8J4Gbivp5q7nRHAyxIumm0FnKgfQWSnAvXCdF/SHaDZ0CBhmQdt2Ivn58HC6iDeqM1gMGswph5Ae2mZwC4OpiGd1bT5/4tpZIs8SKK4Km1KxlQAaAB8B35tc8WMnkrluRSfBl7/Oj/dVBu3oqLFbDspSvZc+5S6srwVWqbrG/D0qgp9w9WQYqD0jN/IkhPMEBwEwkAAAAASUVORK5CYII=");
+        display: block;
+        height: 1em;
+        width: 1em;
+      }
+      /* 头部分割线 */
       .line {
         font-size: 0;
       }
@@ -59,9 +105,12 @@
         display: block;
         content: '';
       }
+
+      /* 信息块的头部 */
       .title {
         border-bottom: solid 2px #02ae51;
       }
+
       .title span {
         background: #02ae51;
         color: #fff;
@@ -82,30 +131,7 @@
         top: 0;
         background-size: 100% 100%;
       }
-      header {
-        padding: 40px;
-        width: 680px;
-        margin: 0 auto;
-        color: #02ae51;
-        font-weight: bolder;
-        font-size: 30px;
-      }
-      header small {
-        font-size: 13px;
-        display: inline-block;
-        padding-left: 30px;
-        position: relative;
-        margin-left: 10px;
-      }
-      header small:before {
-        content: '';
-        display: block;
-        height: 40px;
-        width: 2px;
-        background: #02ae51;
-        position: absolute;
-        left: 0;
-      }
+
       .resume {
         width: 680px;
         margin: 0 auto;
@@ -167,13 +193,22 @@
         color: rgba(123, 123, 123, 0.61);
         padding: 3px 6px;
       }
+      @media print {
+        header .print {
+          display: none;
+        }
+        #attention {
+          display: none;
+        }
+      }
     </style>
   </head>
   <body>
     <p id='attention'>It's a developing edtion, not final version.<br>非最终版，还在开发中...</p>
     <header>
       个人简历
-      <small>Personal resume<br>Thinksgiving. Love what you learn, Do what you want. Be the Best.</small>
+      <small>Thinksgiving. Love what you learn, <br>Do what you want. Be the Best.</small>
+      <span class='print' onclick='print();'></span>
     </header>
     <div class='line'>
       <span class='left'></span>
