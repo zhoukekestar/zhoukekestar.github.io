@@ -154,7 +154,7 @@
       .resume table td {
         padding: 6px;
       }
-      #attention {
+      .attention {
         position: fixed;
         right: 0;
         border-radius: 5px 0 0 5px;
@@ -166,6 +166,10 @@
         font-family: cursive;
         font-size: 12px;
         top: 10px;
+        width: 14em;
+        text-align: left;
+        display: none;
+        z-index: 2;
       }
       .resume a {
         color: inherit;
@@ -180,39 +184,90 @@
         display: inline-block;
         margin-right: 5px;
       }
+      /* 技能百分比样式 */
       .resume .skills > span {
         margin: 5px;
         display: inline-block;
       }
       .resume .skills .c100 {
-        font-size: 50px;
+        font-size: 65px;
       }
       .skills .c100 .bar,
       .skills .c100 .fill {
         border-color: #95d142 !important;
       }
+      .skills .c100 > span,
       .skills .c100:hover > span {
         color: #7b7b7b;
       }
-      .resume .skills span.small {
-        font-size: 12px;
-        color: rgba(123, 123, 123, 0.61);
-        padding: 3px 6px;
+      .skills .c100.small > span {
+        font-size: 0.14em;
+        line-height: 7em;
+        width: 7em;
       }
+      .skills .c100.small:hover > span {
+        font-size: 0.17em;
+        line-height: 6em;
+        width: 6em;
+        font-weight: bold;
+      }
+      .skills .c100.small.two-lines > span {
+        font-size: 0.14em;
+        line-height: 1.2em;
+        width: 7em;
+        top: 50%;
+        margin-top: -15%;
+      }
+      .skills .c100.small.two-lines:hover > span {
+        font-size: 0.17em;
+        line-height: 1.2em;
+        width: 6em;
+        top: 50%;
+        margin-top: -20%;
+        font-weight: bold;
+      }
+      .skills .c100.p10 {
+        opacity: .5;
+      }
+      .skills .c100.p10:hover {
+        opacity: 1;
+      }
+      /* 打印样式 */
       @media print {
         header .print {
           display: none;
         }
-        #attention {
-          display: none;
+        .attention {
+          display: none !important;
         }
+      }
+      /* 项目经历 */
+      .project-title .company,
+      .project-title .job {
+        margin-left: 30px;
+        float: right;
+      }
+      .projects ul + .project-title {
+        margin-top: 40px;
+      }
+      .projects ul li {
+        margin-bottom: 10px;
+        line-height: 2em;
+        font-size: 15px;
+      }
+      .certificate ul {
+        margin: 0;
+      }
+      .certificate ul li {
+        margin-top: 10px;
       }
     </style>
     <link rel="stylesheet" href="./assets/css/circle.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/hint.css/2.5.0/hint.base.min.css">
   </head>
   <body>
-    <p id='attention'>It's a developing edtion, not final version.<br>非最终版，还在开发中...</p>
+    <p class='attention public'>注意！您正在浏览公开版简历。如需查看真实个人信息的，请点击投递简历中的链接。</p>
+    <p class='attention private'>温馨提示：如需打印，点击右上角的打印按钮就可。</p>
     <header>
       个人简历
       <small>Thinksgiving. Love what you learn, <br>Do what you want. Be the Best.</small>
@@ -265,47 +320,77 @@
         </table>
       </script>
       <h2 class="title"><span>项目经历</span></h2>
-      <section>
-        <p>2017-01 ~ 至今</p>
+      <section class='projects'>
+        <p class='project-title'>
+          <span class='time'>2017-05 ~ 至今 </span>
+          <span class='job'>前端工程师</span>
+          <span class='company'>浙江蓝麦电子商务股份有限公司</span>
+        </p>
         <ul>
-          <li>负责制定web前端框架标准，向标准靠近，兼容性较差的采用Riot，较好的采用CustomElement V0</li>
-          <li>GraphQL, WebComponents</li>
+          <li>负责制定web前端框架标准，向标准靠近。根据兼容性的不同，分别采用Riot和CustomElement V0搭建前端框架。</li>
+          <li>使用Riot组件化标准，使得原有项目迁移成本减至最低。</li>
         </ul>
-        <p>2016-01 ~ 2016-12</p>
+        <p class='project-title'>
+          <span class='time'>2017-01 ~ 2017-04 </span>
+          <span class='job'>前端工程师</span>
+          <span class='company'>浙江蓝麦电子商务股份有限公司</span>
+        </p>
         <ul>
-          <li>Docker, Nodejs</li>
-          <li>Weex</li>
-        </ul>
-        <p>2015-01 ~ 2015-12</p>
-        <ul>
-          <li>Module</li>
-          <li>Java, Mybatis</li>
+          <li>率先在运营后台接口采用GraphQL标准，实现用户权限与认证模块相关功能，使得前端接口调用更为灵活，接口对接效率大大提升。</li>
         </ul>
 
+        <p class='project-title'>
+          <span class='time'>2016-01 ~ 2016-12</span>
+          <span class='job'>前端工程师</span>
+          <span class='company'>浙江蓝麦电子商务股份有限公司</span>
+        </p>
+        <ul>
+          <li>提出采用git + Docker化部署方案，先于后端在阿里云上进行docker部署，使得运维工作大大简化。</li>
+          <li>采用git push + auto build + deploy image的工作流，在测试环境实现了代码变更的自动部署，极大提高了部署效率。正式环境也只需点击确认按钮即可发布</li>
+          <li>提出使用Weex编写Android和iOS客户端部分页面，统一复用三端代码。使得页面编码效率有较大提升，并能得到好于web的性能体验。</li>
+        </ul>
 
-        <p>更多经历详情，可查看<a href="/timeline.html">timeline</a>。</p>
+        <p class='project-title'>
+          <span class='time'>2015-07 ~ 2015-12</span>
+          <span class='job'>前端工程师</span>
+          <span class='company'>浙江蓝麦电子商务股份有限公司</span>
+        </p>
+        <ul>
+          <li>提出前后端分离的解决方案，使得项目得到较大的优化。使得项目问题定位更准确，前端优化更为灵活。</li>
+          <li>采用nodejs编写前端，并用模块化方式(require.js)组织前端功能模块。使得项目更易于维护。</li>
+          <li>实施组件化(特指封装一段HTML，JS，CSS)方案，将逻辑或布局复杂且相对的独立的组件进行封装，使得页面组织更为清晰，代码维护更为便捷。</li>
+        </ul>
+
+        <p class='project-title'>
+          <span class='time'>2014-03 ~ 2015-06</span>
+          <span class='job'>Java工程师</span>
+          <span class='company'>浙江蓝麦电子商务股份有限公司</span>
+        </p>
+        <ul>
+          <li>公司基础技术服务的搭建，如：服务器的CentOS的安装, SVN, FTP, Web Server (apache, nginx, tomcat) 的搭建。完善了公司基础技术服务。</li>
+          <li>负责公司的后台的接口设计、实现和部署（包括公司和阿里云服务器）。提出采用RESTful风格的接口规范，使得接口调用语义更明确。</li>
+          <li>负责实现后台安全模块、后台支付模块。对接第三方支付，如支付宝支付，银联支付，满足了当时公司的支付需求，使得公司快速实现现金流的运转。</li>
+          <li>使用servlet, JSP等技术。负责土冒后台管理、土冒移动端页面、微信活动。满足了公司初期的后台管理。及时快速地发布土冒移动版、微信优惠活动，使得公司影响力与日俱增。</li>
+        </ul>
+        <p>更多详情和校园项目经历，可查看<a href="/timeline.html">timeline</a>。</p>
       </section>
+      <h2 class="title"><span>获奖和证书</span></h2>
+      <section class='certificate'>
+        <ul>
+          <li>ACM浙江省赛二等奖</li>
+          <li>大学英语4级 (CET-4), 能较为轻松地查看英文技术文档，习惯使用Google</li>
+          <li>浙江省高三组数学竞赛二等奖</li>
+        </ul>
+      </section>
+
       <h2 class="title"><span>技能标签</span></h2>
       <section class='skills'>
-        <span>HTTP(S)</span>
-        <span>WebComponents</span>
-        <span>Docker</span>
-        <span>Linux</span>
-        <span>Weex</span>
-        <span>MySQL</span>
-        <span>MongoDB</span>
-        <span>Redis</span>
-        <span>GraphQL</span>
-        <span class='small'>Java</span>
-        <span class='small'>Android</span>
-        <span class='small'>MyBatis</span>
-        <span class='small'>C/C++</span>
       </section>
       <script id="template-skills" type="x-tmpl-mustache">
         {{#skills}}
           <span class='hint--bottom' aria-label="{{label}}">
-            <div class="c100 p{{percent}} center">
-              <span>{{name}}</span>
+            <div class="c100 p{{percent}} {{class}}">
+              <span>{{&name}}</span>
               <div class="slice"><div class="bar"></div><div class="fill"></div></div>
             </div>
           </span>
@@ -314,6 +399,8 @@
       <h2 class="title"><span>自我评价</span></h2>
       <section>
         <p>太爱折腾，不过，自学能力不错，适应能力较强。</p>
+        <p>喜爱并使用大量开源软件，意识到：文档和注释是项目使用的关键，项目测试是质量保证的关键。并努力向这两个关键靠拢。</p>
+        <p>团队沟通和协作相对较强。</p>
       </section>
     </div>
     <script src='https://cdn.bootcss.com/mustache.js/2.3.0/mustache.min.js'></script>
@@ -336,6 +423,13 @@
         sex = (sex = location.search.match(/sex=([^&=]*)/)) && sex[1] || '';
         major = (major = location.search.match(/major=([^&=]*)/)) && major[1] || '';
 
+        // 访问简历是否包含个人信息
+        if (!name) {
+          document.querySelector('.attention.public').style.display = 'block';
+        } else {
+          document.querySelector('.attention.private').style.display = 'block';
+        }
+
         userInfo.innerHTML = Mustache.render(tmplUser.innerHTML, {
           name: decodeURIComponent(name),
           age: decodeURIComponent(age),
@@ -351,39 +445,131 @@
               label: 'HTML 70'
             },
             {
-              name: 'JS',
-              percent: 65,
-              label: 'Javascript 65'
-            },
-            {
-              name: 'Node',
-              percent: 60,
-              label: 'NodeJS 60'
-            },
-            {
               name: 'CSS',
               percent: 70,
               label: 'CSS 70'
             },
             {
-              name: 'ES6/7',
+              name: 'JS',
               percent: 60,
-              label: 'ES6/7 60'
+              label: 'Javascript 60'
             },
             {
-              name: 'Com',
-              percent: 65,
-              label: 'WebComponents 65'
+              name: 'WebCom<br>ponent',
+              percent: 50,
+              label: 'WebComponents 50',
+              class: 'small two-lines',
+            },
+            {
+              name: 'Express<br>Koa',
+              percent: 50,
+              label: 'Express/Koa 50',
+              class: 'small two-lines',
+            },
+            {
+              name: 'Node',
+              percent: 50,
+              label: 'NodeJS 50'
+            },
+            {
+              name: 'ES6/7',
+              percent: 50,
+              label: 'ES6/7 50'
+            },
+            {
+              name: 'weex',
+              percent: 40,
+              label: 'weex 40'
+            },
+            {
+              name: 'MongoDB',
+              percent: 35,
+              label: 'MongoDB 35',
+              class: 'small'
+            },
+            {
+              name: 'MySQL',
+              percent: 30,
+              label: 'MySQL 30',
+              class: 'small'
+            },
+            {
+              name: 'Redis',
+              percent: 25,
+              label: 'Redis 25'
+            },
+            {
+              name: 'GraphQL',
+              percent: 20,
+              label: 'GraphQL 20',
+              class: 'small'
+            },
+            {
+              name: 'Micro<br>Service',
+              percent: 20,
+              label: 'Micro Service 20',
+              class: 'small two-lines',
             },
             {
               name: 'Docker',
-              percent: 30,
-              label: 'Docker 30'
+              percent: 20,
+              label: 'Docker 20',
+              class: 'small'
             },
             {
               name: 'Shell',
-              percent: 20,
-              label: 'Shell'
+              percent: 15,
+              label: 'Shell 15'
+            },
+            {
+              name: 'Polymer',
+              percent: 15,
+              label: 'Polymer 15',
+              class: 'small'
+            },
+            {
+              name: 'Java',
+              percent: 10,
+              label: 'Java 10'
+            },
+            {
+              name: 'JSP',
+              percent: 10,
+              label: 'JSP 10'
+            },
+            {
+              name: 'Android',
+              percent: 10,
+              label: 'Android 10',
+              class: 'small'
+            },
+            {
+              name: 'MyBatis',
+              percent: 10,
+              label: 'MyBatis 10',
+              class: 'small'
+            },
+            {
+              name: 'C/C++',
+              percent: 10,
+              label: 'C/C++ 10'
+            },
+            {
+              name: 'C#',
+              percent: 10,
+              label: 'C# 10'
+            },
+            {
+              name: 'Groove',
+              percent: 10,
+              label: 'Groove 10',
+              class: 'small'
+            },
+            {
+              name: 'OpenGL',
+              percent: 10,
+              label: 'OpenGL 10',
+              class: 'small'
             },
           ]
         })
