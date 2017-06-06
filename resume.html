@@ -180,13 +180,19 @@
         display: inline-block;
         margin-right: 5px;
       }
-      .resume .skills span {
-        border: solid 1px #ccc;
-        border-radius: 5px;
-        font-size: 14px;
-        padding: 6px;
+      .resume .skills > span {
         margin: 5px;
         display: inline-block;
+      }
+      .resume .skills .c100 {
+        font-size: 50px;
+      }
+      .skills .c100 .bar,
+      .skills .c100 .fill {
+        border-color: #95d142 !important;
+      }
+      .skills .c100:hover > span {
+        color: #7b7b7b;
       }
       .resume .skills span.small {
         font-size: 12px;
@@ -202,6 +208,8 @@
         }
       }
     </style>
+    <link rel="stylesheet" href="./assets/css/circle.css">
+    <link rel="stylesheet" href="https://cdn.bootcss.com/hint.css/2.5.0/hint.base.min.css">
   </head>
   <body>
     <p id='attention'>It's a developing edtion, not final version.<br>非最终版，还在开发中...</p>
@@ -216,13 +224,37 @@
     </div>
     <div class='resume'>
       <h2 class="title"><span>基本信息</span></h2>
-      <section>
+      <section id='user-info'>
+      </section>
+      <script id="template-user-info" type="x-tmpl-mustache">
         <table>
+          {{#name}}
+            <tr>
+              <td>名字</td>
+              <td style='width: 230px;'>{{name}}</td>
+              <td>性别</td>
+              <td>{{sex}}</td>
+            </tr>
+            <tr>
+              <td>出生年月</td>
+              <td>{{age}}</td>
+              <td>专业</td>
+              <td>{{major}}</td>
+            </tr>
+          {{/name}}
+          {{^name}}
+            <tr>
+              <td>昵称</td>
+              <td style='width: 230px;'>zhoukekestar</td>
+              <td>民族</td>
+              <td>汉</td>
+            </tr>
+          {{/name}}
           <tr>
-            <td>昵称</td>
-            <td style='width: 230px;'>zhoukekestar</td>
-            <td>民族</td>
-            <td>汉</td>
+            <td>毕业院校</td>
+            <td>台州学院</td>
+            <td>学历</td>
+            <td>本科</td>
           </tr>
           <tr>
             <td>Email</td>
@@ -230,19 +262,9 @@
             <td>Github</td>
             <td><a href="https://zhoukekestar.github.io">zhoukekestar.github.io</a></td>
           </tr>
-          <tr>
-            <td>毕业院校</td>
-            <td>台州学院</td>
-            <td>学历</td>
-            <td>本科</td>
-          </tr>
         </table>
-      </section>
-      <h2 class="title"><span>教育背景</span></h2>
-      <section>
-        <p>2011 ~ 2015 台州学院 本科</p>
-      </section>
-      <h2 class="title"><span>实习经历</span></h2>
+      </script>
+      <h2 class="title"><span>项目经历</span></h2>
       <section>
         <p>2017-01 ~ 至今</p>
         <ul>
@@ -263,13 +285,8 @@
 
         <p>更多经历详情，可查看<a href="/timeline.html">timeline</a>。</p>
       </section>
-      <h2 class="title"><span>技能</span></h2>
+      <h2 class="title"><span>技能标签</span></h2>
       <section class='skills'>
-        <span>HTML</span>
-        <span>Javascript</span>
-        <span>CSS</span>
-        <span>Nodejs</span>
-        <span>ES6/7</span>
         <span>HTTP(S)</span>
         <span>WebComponents</span>
         <span>Docker</span>
@@ -284,10 +301,94 @@
         <span class='small'>MyBatis</span>
         <span class='small'>C/C++</span>
       </section>
+      <script id="template-skills" type="x-tmpl-mustache">
+        {{#skills}}
+          <span class='hint--bottom' aria-label="{{label}}">
+            <div class="c100 p{{percent}} center">
+              <span>{{name}}</span>
+              <div class="slice"><div class="bar"></div><div class="fill"></div></div>
+            </div>
+          </span>
+        {{/skills}}
+      </script>
       <h2 class="title"><span>自我评价</span></h2>
       <section>
         <p>太爱折腾，不过，自学能力不错，适应能力较强。</p>
       </section>
     </div>
+    <script src='https://cdn.bootcss.com/mustache.js/2.3.0/mustache.min.js'></script>
+    <script>
+      ;(function() {
+        var tmplUser = document.querySelector('#template-user-info');
+        var tmplSkills = document.querySelector('#template-skills');
+        var userInfo = document.querySelector('#user-info');
+        var skills = document.querySelector('.skills');
+
+        var name = '';
+        var age = '';
+        var sex = '';
+        var marjor = '';
+
+        // 为保护个人隐私，只从发出去的正式简历中带个人信息才显示个人信息
+        // https://zhoukekestar.github.io/resume.html?name=张三&sex=未知&age=2000-0101&major=专业名称
+        name = (name = location.search.match(/name=([^&=]*)/)) && name[1] || '';
+        age = (age = location.search.match(/age=([^&=]*)/)) && age[1] || '';
+        sex = (sex = location.search.match(/sex=([^&=]*)/)) && sex[1] || '';
+        major = (major = location.search.match(/major=([^&=]*)/)) && major[1] || '';
+
+        userInfo.innerHTML = Mustache.render(tmplUser.innerHTML, {
+          name: decodeURIComponent(name),
+          age: decodeURIComponent(age),
+          sex: decodeURIComponent(sex),
+          major: decodeURIComponent(major),
+        });
+
+        skills.innerHTML = Mustache.render(tmplSkills.innerHTML, {
+          skills: [
+            {
+              name: 'HTML',
+              percent: 70,
+              label: 'HTML 70'
+            },
+            {
+              name: 'JS',
+              percent: 65,
+              label: 'Javascript 65'
+            },
+            {
+              name: 'Node',
+              percent: 60,
+              label: 'NodeJS 60'
+            },
+            {
+              name: 'CSS',
+              percent: 70,
+              label: 'CSS 70'
+            },
+            {
+              name: 'ES6/7',
+              percent: 60,
+              label: 'ES6/7 60'
+            },
+            {
+              name: 'Com',
+              percent: 65,
+              label: 'WebComponents 65'
+            },
+            {
+              name: 'Docker',
+              percent: 30,
+              label: 'Docker 30'
+            },
+            {
+              name: 'Shell',
+              percent: 20,
+              label: 'Shell'
+            },
+          ]
+        })
+      })();
+
+    </script>
   </body>
 </html>
