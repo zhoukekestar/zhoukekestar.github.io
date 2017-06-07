@@ -267,6 +267,7 @@
         line-height: 2em;
         font-size: 15px;
       }
+      /* 证书和个人观点文字样式 */
       .certificate ul,
       .options ul {
         margin: 0;
@@ -275,6 +276,20 @@
       .options ul li {
         margin-top: 10px;
         line-height: 1.5em;
+      }
+      /* 观点小问号 */
+      .options small {
+        background: rgba(0, 0, 0, 0.63);
+        display: inline-block;
+        height: 15px;
+        width: 15px;
+        line-height: 15px;
+        vertical-align: middle;
+        text-align: center;
+        color: #fff;
+        border-radius: 50%;
+        font-size: 12px;
+        cursor: pointer;
       }
     </style>
     <link rel="stylesheet" href="./assets/css/circle.css">
@@ -383,7 +398,7 @@
         </p>
         <ul>
           <li>提出采用 RESTful 风格的接口规范，使得接口调用语义更明确。</li>
-          <li>公司基础技术服务的搭建，如：服务器的 CentOS 安装, SVN, FTP, Web Server (apache, nginx, tomcat) 的搭建。完善了公司基础技术服务。</li>
+          <li>公司基础技术服务的搭建，如：服务器的 CentOS 安装, SVN, FTP, Web Server ( Apache, Nginx, Tomcat ) 的搭建。完善了公司基础技术服务。</li>
           <li>负责实现后台安全模块、后台支付模块。对接第三方支付，如支付宝支付，银联支付等，满足了当时公司的支付需求，使得公司快速实现现金流的运转。</li>
           <li>使用 Servlet, JSP 等技术，负责土冒后台管理、土冒移动端页面、微信活动。满足了公司初期的后台管理需求，并及时快速地发布土冒移动版、微信优惠活动等。</li>
         </ul>
@@ -417,9 +432,16 @@
           <li>自学能力不错，适应能力较强。</li>
           <li>团队沟通和协作能力相对较强。</li>
           <li>喜爱并使用大量开源软件，认为文档和注释是项目使用的关键，项目测试是质量保证的关键。并努力向这两个关键靠拢。</li>
-          <li>个人技术观: 技术为应用而生。</li>
-          <li>框架观点: More HTML & CSS (because they are as powerful as js), Less Javascript. As close as possible to standards. </li>
-          <li>面试观点: 不喜欢whiteboards面试，如果是whiteboards面试，勿扰，谢谢。<a href="https://zhoukekestar.github.io/notes/2017/03/16/hiring-without-whiteboards.html">查看详情</a>。</li>
+          <li>个人技术观: <br /> 技术为应用而生。</li>
+          <li>
+            框架观点: <br />
+            More HTML & CSS
+            <small class='hint--bottom' aria-label='Because they are as powerful as JS.'>?</small>
+            , Less Javascript. <br />
+            As close as possible to standards.
+            <small class='hint--bottom' aria-label='W3C is the future!'>?</small>
+          </li>
+          <li>面试观点: <br />不喜欢whiteboards面试，如果是whiteboards面试，勿扰，谢谢。<a href="https://zhoukekestar.github.io/notes/2017/03/16/hiring-without-whiteboards.html">查看详情</a>。</li>
         </ul>
       </section>
     </div>
