@@ -1,0 +1,7 @@
+<?xml version="1.0" standalone="no"?>
+<!DOCTYPE svg PUBLIC "-//W3C//DTD SVG 1.1//EN" "http://www.w3.org/Graphics/SVG/1.1/DTD/svg11.dtd">
+<svg height='100' width='210' version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <path d="M0 0 L100 100 L0 100 Z" fill='#02ae51'></path>
+  <path d="M30 -10 L150 110" data-d='M40 0 L140 100' stroke-width='20' stroke='#02ae51'></path>
+  <path d="M80 -10 L200 110" data-d='M80 0 L180 100' stroke-width='20' stroke='#02ae51'></path>
+</svg>
