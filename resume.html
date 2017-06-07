@@ -255,11 +255,14 @@
         line-height: 2em;
         font-size: 15px;
       }
-      .certificate ul {
+      .certificate ul,
+      .options ul  {
         margin: 0;
       }
-      .certificate ul li {
+      .certificate ul li,
+      .options ul    {
         margin-top: 10px;
+        line-height: 1.5em;
       }
     </style>
     <link rel="stylesheet" href="./assets/css/circle.css">
@@ -374,15 +377,6 @@
         </ul>
         <p>更多详情和校园项目经历，可查看<a href="/timeline.html">timeline</a>。</p>
       </section>
-      <h2 class="title"><span>获奖和证书</span></h2>
-      <section class='certificate'>
-        <ul>
-          <li>ACM浙江省赛二等奖</li>
-          <li>大学英语4级 (CET-4), 能较为轻松地查看英文技术文档，习惯使用Google</li>
-          <li>浙江省高三组数学竞赛二等奖</li>
-        </ul>
-      </section>
-
       <h2 class="title"><span>技能标签</span></h2>
       <section class='skills'>
       </section>
@@ -396,11 +390,25 @@
           </span>
         {{/skills}}
       </script>
-      <h2 class="title"><span>自我评价</span></h2>
-      <section>
-        <p>太爱折腾，不过，自学能力不错，适应能力较强。</p>
-        <p>喜爱并使用大量开源软件，意识到：文档和注释是项目使用的关键，项目测试是质量保证的关键。并努力向这两个关键靠拢。</p>
-        <p>团队沟通和协作相对较强。</p>
+      <h2 class="title"><span>获奖和证书</span></h2>
+      <section class='certificate'>
+        <ul>
+          <li>ACM浙江省赛二等奖，<a href="http://acm.tzc.edu.cn/acmhome/heroList.do?method=showTeamList&year=2013">查看详情</a>。</li>
+          <li>大学英语4级 (CET-4), 能较为轻松地查看英文技术文档，习惯使用Google。</li>
+          <li>浙江省高三组数学竞赛二等奖，<a href="https://zhoukekestar.github.io/assets/2011_math.html">查看详情</a>。</li>
+        </ul>
+      </section>
+      <h2 class="title"><span>自我评价和个人观点</span></h2>
+      <section class='options'>
+        <ul>
+          <li>太爱折腾。</li>
+          <li>自学能力不错，适应能力较强。</li>
+          <li>团队沟通和协作相对较强。</li>
+          <li>喜爱并使用大量开源软件，意识到：文档和注释是项目使用的关键，项目测试是质量保证的关键。并努力向这两个关键靠拢。</li>
+          <li>个人技术观: 技术为应用而生。</li>
+          <li>框架观点: More HTML & CSS (because they are as powerful as js), Less Javascript. As close as possible to standards. </li>
+          <li>面试观点: 不喜欢whiteboards面试，如果是whiteboards面试，勿扰，谢谢。<a href="https://zhoukekestar.github.io/notes/2017/03/16/hiring-without-whiteboards.html">查看详情</a>。</li>
+        </ul>
       </section>
     </div>
     <script src='https://cdn.bootcss.com/mustache.js/2.3.0/mustache.min.js'></script>
@@ -575,6 +583,17 @@
         })
       })();
 
+    </script>
+
+    <!-- GA -->
+    <script>
+      (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+      (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+      m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+      })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+      ga('create', 'UA-96916405-4', 'auto');
+      ga('send', 'pageview');
     </script>
   </body>
 </html>
