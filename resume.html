@@ -109,8 +109,20 @@
       /* 信息块的头部 */
       .title {
         border-bottom: solid 2px #02ae51;
+        position: relative;
+        font-size: 0;
       }
 
+      .title:before {
+        content: '';
+        background-image: url(./assets/svg/left-square.svg);
+        height: 42px;
+        width: 30px;
+        position: absolute;
+        left: -30px;
+        top: 0;
+        background-size: 100% 100%;
+      }
       .title span {
         background: #02ae51;
         color: #fff;
