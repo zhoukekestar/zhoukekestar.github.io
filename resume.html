@@ -254,16 +254,17 @@
       }
       /* 证书和个人观点文字样式 */
       .certificate ul,
-      .options ul {
+      .opinion ul {
         margin: 0;
       }
       .certificate ul li,
-      .options ul li {
+      .opinion ul li,
+      .skills ul li {
         margin-top: 10px;
         line-height: 1.5em;
       }
       /* 观点小问号 */
-      .options small {
+      .opinion small {
         background: rgba(0, 0, 0, 0.63);
         display: inline-block;
         height: 15px;
@@ -362,7 +363,7 @@
           <span class='company'>浙江蓝麦电子商务股份有限公司</span>
         </p>
         <ul>
-          <li>率先在运营后台接口采用 GraphQL 技术，实现用户权限与认证模块相关功能，使得前端接口调用更为灵活，接口对接效率大大提升。</li>
+          <li>率先在运营后台接口采用 GraphQL + Koa + Sequelize 技术栈，实现用户权限与认证模块相关功能，使得前端接口调用更为灵活，接口对接效率大大提升。</li>
         </ul>
 
         <p class='project-title'>
@@ -413,6 +414,14 @@
           </span>
         {{/skills}}
       </script>
+      <h2 class="title"><span>技能相关</span></h2>
+      <section class='skills'>
+        <ul>
+          <li>阅读过部分 Zepto, Vue 源码。</li>
+          <li>使用过 Weex 进行混合开发，并有一定的混合开发经验。</li>
+          <li>在多环境下进行 Web 技术尝试，如：桌面 (Electron), 浏览器(Chrome Extension), Android (Weex), 跨终端工具 (NPM)。</li>
+        </ul>
+      </section>
       <h2 class="title"><span>获奖和证书</span></h2>
       <section class='certificate'>
         <ul>
@@ -422,10 +431,10 @@
         </ul>
       </section>
       <h2 class="title"><span>自我评价和个人观点</span></h2>
-      <section class='options'>
+      <section class='opinion'>
         <ul>
           <li>太爱折腾，喜欢有挑战的任务。</li>
-          <li>自学能力不错，适应能力较强。</li>
+          <li>自学能力不错，适应能力较强。喜欢应用适合、恰当的新技术解决当前的技术痛点。</li>
           <li>团队沟通和协作能力相对较强。</li>
           <li>喜爱并使用大量开源软件，认为文档和注释是项目使用的关键，项目测试是质量保证的关键。并努力向这两个关键靠拢。</li>
           <li>个人技术观: <br /> 技术为应用而生。</li>
