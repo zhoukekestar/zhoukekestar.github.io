@@ -229,15 +229,7 @@
       .skills .c100.p10:hover {
         opacity: 1;
       }
-      /* 打印样式 */
-      @media print {
-        header .print {
-          display: none;
-        }
-        .attention {
-          display: none !important;
-        }
-      }
+
       /* 项目经历 */
       .project-title .company,
       .project-title .job {
@@ -287,6 +279,16 @@
         padding: 2px;
         font-size: 12px;
         color: #fff;
+      }
+      /* 打印样式 */
+      @media print {
+        header .print {
+          display: none;
+        }
+        .stop-watch,
+        .attention {
+          display: none !important;
+        }
       }
     </style>
     <link rel="stylesheet" href="./assets/css/circle.css">
