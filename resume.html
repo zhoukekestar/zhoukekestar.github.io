@@ -292,7 +292,8 @@
       }
       /* 打印样式 */
       @media print {
-        header .print {
+        header .print,
+        header .pdf {
           display: none;
         }
         .stop-watch,
@@ -314,7 +315,7 @@
       个人简历
       <small>Thanksgiving. Love what you learn, <br>Do what you want. Be the Best.</small>
       <span class='print' onclick='print();'></span>
-      <a class='pdf'></a>
+      <a href='./resume.pdf' class='pdf'></a>
     </header>
     <div class='line'><img src='./assets/svg/resume-title-line.svg'></div>
     <div class='resume'>
