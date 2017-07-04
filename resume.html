@@ -41,7 +41,8 @@
         position: absolute;
         left: 0;
       }
-      header .print {
+      header .print,
+      header .pdf {
         background: #95d142;
         display: block;
         position: absolute;
@@ -52,12 +53,21 @@
         cursor: pointer;
       }
 
-      header .print:before {
+      header .pdf {
+        right: 120px;
+      }
+
+      header .print:before,
+      header .pdf:before {
         content: '';
         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABfElEQVRYR+2X603DQBCEZyogHUAJUAHQAVRASggV4FSASwgduANCB9BBSqCDQWNdrCOy7MtdFCuSV/KPKOfdz+N9mZjYOBRf0gOA+xMwfpDc9fkZA6gAGGJbALEEsCTZ6yMFACQNkmWSHLiaAWYFLkMBSc72uO5vQur31nBiWdwC8P2/0fktybV/d2UoaQXA1ybRcckx94YVySYGaGu9pOZTiUJvsArVWQAkPQF4B/Dqp54CwK92D1CfHcCvxoNtX4qTAMT5cTkAoS+8pWb3wLnHuBMmKxAA3IxKekMdar7bB44FKOoNfftAFkDGevZl2U8J4Gbivp5q7nRHAyxIumm0FnKgfQWSnAvXCdF/SHaDZ0CBhmQdt2Ivn58HC6iDeqM1gMGswph5Ae2mZwC4OpiGd1bT5/4tpZIs8SKK4Km1KxlQAaAB8B35tc8WMnkrluRSfBl7/Oj/dVBu3oqLFbDspSvZc+5S6srwVWqbrG/D0qgp9w9WQYqD0jN/IkhPMEBwEwkAAAAASUVORK5CYII=");
         display: block;
         height: 1em;
         width: 1em;
+        background-size: contain;
+      }
+      header .pdf:before {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB/0lEQVRYR+2X/VHCQBDF36tArQCtQK1AqUCtQK1ArECoQK1AO9AOkAqECtQO6GCdh3vOJlwSwGT4x51hSHJ3ud/u7VeIIGb2BuAkPlvjeg7gAMAugHcAzyRvm9YzA7CvxU0Lc+Mkh2Z2CmDs41LogqTgspIDAEm9ZCMJADMAhwCmAPpVEF0CjAB8Anjyf1lCMAXpFMCP5NyP1NwSBYjOAaSumR0BkD8sQXQJoA31SyIIWWMSfaxLgCon7hagLnQ8zxSirHUL/AP8W2BtC5jZXVh05dcbFaMVisfS+2lmyk5bkyoAFZIoymJn4UEcV/1XhuuF8UkpC6YhWSDOQxaApJ6rL1hMJjnxexWSHR/Xxiq3M5VaMxsCSMc58kJUbm4eAEiZX6kDiC+ckjxOmzhAbDzShq9uqXTfeLyrAoh4z+nHGQCNqx2Tdi8AWgd4JDkwM5nwpgKgD0Ctl/rBBCArJtGRXpa9vdIC5YlmpsWL8KwBUAf0EQCiD8g6UqAgdUcgj03EhR5xG0dQpP6JkuiE6YhkIUG37gM5AIWhzDpXs2lmspgaUMnfAADIeaRhVXsenUsbKhHF+E7tWHle2QXyiWhpVocPtl8LonLes/VIKqm0Lqv0hAMA9wCuSbZekhsBpLKZqeCkbzrl9jZFkfJV+V3gAAoveW+5xLYFUvgu+AYB+Xp4Sk6lGgAAAABJRU5ErkJggg==");
       }
       /* 头部分割线 */
       .line {
@@ -304,6 +314,7 @@
       个人简历
       <small>Thanksgiving. Love what you learn, <br>Do what you want. Be the Best.</small>
       <span class='print' onclick='print();'></span>
+      <a class='pdf'></a>
     </header>
     <div class='line'><img src='./assets/svg/resume-title-line.svg'></div>
     <div class='resume'>
