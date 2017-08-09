@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8">
+  <title>具体位置</title>
+  <meta name="viewport" content="width=500,user-scalable=no">
+  <style>
+    html,body {
+      margin: 0;
+      padding: 0;
+    }
+  </style>
+</head>
+
+<body>
+  <header style='text-align: center; font-size: 27px; padding: 18px;'></header>
+  <div class="seats">
+    <canvas height="800" width="500">
+      <p>当前浏览器不支持canvas！无法进行座位展示</p>
+    </canvas>
+  </div>
+
+  <script>
+    // 获取当前位置
+    var current;
+    current = (current = location.search.match(/current=([^&=]*)/)) && current[1];
+    current = (current || ',').split(',');
+    current = {
+      seaty: +current[0] || 1,
+      seatx: +current[1] || 1,
+    }
+    document.querySelector('header').innerHTML = '您的位置在：' + current.seaty + '排' + current.seatx + '座';
+
+    // canvas 文档参考 http://www.runoob.com/tags/ref-canvas.html
+    var canvas = document.querySelector('canvas');
+    var ctx = canvas.getContext("2d");
+
+    // 画会议舞台
+    ctx.lineWidth = 2;
+    ctx.strokeRect(100,-2,300,80);
+
+    // 舞台文字说明
+    ctx.lineWidth = 1;
+    ctx.font = "20px Verdana";
+    ctx.strokeText("会议舞台", 200, 35);
+
+    //创建座位：
+
+    var seat = {
+      width: 30, // 座位宽高
+      height: 30,
+      padding: 5,
+      x: 30,
+      y: 150,
+    };
+    seat.w = seat.width + seat.padding * 2; // 画座位需要的宽高
+    seat.h = seat.height + seat.padding * 2;
+
+    var seatx, seaty;
+    for (var x = 1, seatx = 0; x <= 11; x++) {
+      if (x == 6) {
+        continue;
+      } else {
+        seatx++;
+      }
+
+      for (y = 1, seaty = 0; y <= 15; y++) {
+
+        if (y == 6) {
+          continue;
+        } else {
+          seaty++;
+        }
+
+        ctx.fillStyle = "#DFDFDF";
+        // console.log(x, y, seatx, seaty)
+        if (current.seatx === seatx && current.seaty === seaty) {
+          ctx.fillStyle = '#f00';
+        }
+        ctx.fillRect(seat.x + (seat.w * (x - 1)), seat.y + (seat.h * (y - 1)), seat.width, seat.height);
+      }
+    };
+
+
+
+    // ctx.fillStyle = "#f00";
+    // ctx.fillRect(80, 150, 30, 30);
+
+
+  </script>
+</body>
+
+</html>
