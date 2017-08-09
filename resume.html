@@ -41,7 +41,8 @@
         position: absolute;
         left: 0;
       }
-      header .print {
+      header .print,
+      header .pdf {
         background: #95d142;
         display: block;
         position: absolute;
@@ -52,12 +53,21 @@
         cursor: pointer;
       }
 
-      header .print:before {
+      header .pdf {
+        right: 120px;
+      }
+
+      header .print:before,
+      header .pdf:before {
         content: '';
         background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABfElEQVRYR+2X603DQBCEZyogHUAJUAHQAVRASggV4FSASwgduANCB9BBSqCDQWNdrCOy7MtdFCuSV/KPKOfdz+N9mZjYOBRf0gOA+xMwfpDc9fkZA6gAGGJbALEEsCTZ6yMFACQNkmWSHLiaAWYFLkMBSc72uO5vQur31nBiWdwC8P2/0fktybV/d2UoaQXA1ybRcckx94YVySYGaGu9pOZTiUJvsArVWQAkPQF4B/Dqp54CwK92D1CfHcCvxoNtX4qTAMT5cTkAoS+8pWb3wLnHuBMmKxAA3IxKekMdar7bB44FKOoNfftAFkDGevZl2U8J4Gbivp5q7nRHAyxIumm0FnKgfQWSnAvXCdF/SHaDZ0CBhmQdt2Ivn58HC6iDeqM1gMGswph5Ae2mZwC4OpiGd1bT5/4tpZIs8SKK4Km1KxlQAaAB8B35tc8WMnkrluRSfBl7/Oj/dVBu3oqLFbDspSvZc+5S6srwVWqbrG/D0qgp9w9WQYqD0jN/IkhPMEBwEwkAAAAASUVORK5CYII=");
         display: block;
         height: 1em;
         width: 1em;
+        background-size: contain;
+      }
+      header .pdf:before {
+        background-image: url("data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAB/0lEQVRYR+2X/VHCQBDF36tArQCtQK1AqUCtQK1ArECoQK1AO9AOkAqECtQO6GCdh3vOJlwSwGT4x51hSHJ3ud/u7VeIIGb2BuAkPlvjeg7gAMAugHcAzyRvm9YzA7CvxU0Lc+Mkh2Z2CmDs41LogqTgspIDAEm9ZCMJADMAhwCmAPpVEF0CjAB8Anjyf1lCMAXpFMCP5NyP1NwSBYjOAaSumR0BkD8sQXQJoA31SyIIWWMSfaxLgCon7hagLnQ8zxSirHUL/AP8W2BtC5jZXVh05dcbFaMVisfS+2lmyk5bkyoAFZIoymJn4UEcV/1XhuuF8UkpC6YhWSDOQxaApJ6rL1hMJjnxexWSHR/Xxiq3M5VaMxsCSMc58kJUbm4eAEiZX6kDiC+ckjxOmzhAbDzShq9uqXTfeLyrAoh4z+nHGQCNqx2Tdi8AWgd4JDkwM5nwpgKgD0Ctl/rBBCArJtGRXpa9vdIC5YlmpsWL8KwBUAf0EQCiD8g6UqAgdUcgj03EhR5xG0dQpP6JkuiE6YhkIUG37gM5AIWhzDpXs2lmspgaUMnfAADIeaRhVXsenUsbKhHF+E7tWHle2QXyiWhpVocPtl8LonLes/VIKqm0Lqv0hAMA9wCuSbZekhsBpLKZqeCkbzrl9jZFkfJV+V3gAAoveW+5xLYFUvgu+AYB+Xp4Sk6lGgAAAABJRU5ErkJggg==");
       }
       /* 头部分割线 */
       .line {
@@ -282,7 +292,8 @@
       }
       /* 打印样式 */
       @media print {
-        header .print {
+        header .print,
+        header .pdf {
           display: none;
         }
         .stop-watch,
@@ -290,13 +301,22 @@
           display: none !important;
         }
       }
+      footer {
+        text-align: center;
+        padding-top: 40px;
+        font-size: 14px;
+        color: #616161;
+      }
+      footer a {
+        color: inherit;
+      }
     </style>
     <link rel="stylesheet" href="./assets/css/circle.css">
     <link rel="stylesheet" href="https://cdn.bootcss.com/hint.css/2.5.0/hint.base.min.css">
   </head>
   <body>
     <div class='stop-watch'>
-      已跟公司表明离职意向，为做好交接工作，需要年底才会进行正式离职。需近期入职的，勿扰。
+      已跟公司表明离职意向，为做好交接工作，需要一定的时间才会进行正式离职。
     </div>
     <p class='attention public'>注意！您正在浏览公开版简历。如需查看真实个人信息的，请点击投递简历中的链接。</p>
     <p class='attention private'>温馨提示：如需打印，点击右上角的打印按钮就可。</p>
@@ -304,6 +324,7 @@
       个人简历
       <small>Thanksgiving. Love what you learn, <br>Do what you want. Be the Best.</small>
       <span class='print' onclick='print();'></span>
+      <a href='./resume.pdf' class='pdf'></a>
     </header>
     <div class='line'><img src='./assets/svg/resume-title-line.svg'></div>
     <div class='resume'>
@@ -419,7 +440,7 @@
       <h2 class="title"><span>技能相关</span></h2>
       <section class='skills'>
         <ul>
-          <li>阅读过部分 Zepto, Vue 源码。</li>
+          <li>阅读过部分 Zepto, Vue, SeaJS, Koa 等源码。</li>
           <li>使用过 Weex 进行混合开发，并有一定的混合开发经验。</li>
           <li>在多环境下进行 Web 技术尝试，如：桌面 (Electron), 浏览器(Chrome Extension), Android (Weex), 跨终端工具 (NPM)。</li>
         </ul>
@@ -428,7 +449,7 @@
       <section class='certificate'>
         <ul>
           <li>ACM浙江省赛二等奖，<a href="http://acm.tzc.edu.cn/acmhome/heroList.do?method=showTeamList&year=2013">查看详情</a>。</li>
-          <li>大学英语4级 (CET-4), 能较为轻松地查看英文技术文档，习惯使用Google。</li>
+          <li>大学英语4级 (CET-4), 习惯阅读英文技术文档，习惯使用Google。</li>
           <li>浙江省高三组数学竞赛二等奖，<a href="https://zhoukekestar.github.io/assets/2011_math.html">查看详情</a>。</li>
         </ul>
       </section>
@@ -456,6 +477,9 @@
         </ul>
       </section>
     </div>
+    <footer>
+      该简历的网页版地址：<a href="https://zhoukekestar.github.io/resume.html">https://zhoukekestar.github.io/resume.html</a>
+    </footer>
     <script src='https://cdn.bootcss.com/mustache.js/2.3.0/mustache.min.js'></script>
     <script>
       ;(function() {
